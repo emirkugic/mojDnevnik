@@ -1,70 +1,191 @@
-# Getting Started with Create React App
+# 🏫 mojDnevnik - Modern School Management Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  <img src="readme-assets/banner.png" alt="mojDnevnik Banner" width="800px" />
+  
+  ![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react)
+  ![React Router](https://img.shields.io/badge/React_Router-6.x-CA4245?style=for-the-badge&logo=react-router)
+  ![Framer Motion](https://img.shields.io/badge/Framer_Motion-latest-0055FF?style=for-the-badge&logo=framer)
+  ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+  
+  *The complete school management solution teachers actually want to use*
+</div>
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+## ✨ Overview
 
-### `npm start`
+**mojDnevnik** is a comprehensive school management platform designed to streamline administration, enhance communication, and improve the educational experience for teachers, students, parents, and administrators. Our intuitive interface and powerful features help schools reduce paperwork, save time, and focus on what matters most: education.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<div align="center">
+  <img src="readme-assets/screenshot-dashboard.png" alt="Dashboard Screenshot" width="90%" />
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br>
 
-### `npm test`
+## 🚀 Key Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **📊 Dashboard Analytics** - Get instant insights into school performance
+- **📝 Attendance Tracking** - Effortlessly monitor student attendance with real-time reporting
+- **📚 Grade Management** - Record, analyze, and share student grades with customizable criteria
+- **📅 Scheduling** - Manage class schedules, events, and important dates in one place
+- **💬 Communication Hub** - Secure messaging between teachers, students, and parents
+- **📱 Mobile Responsive** - Access from any device, anywhere
+- **🔒 Secure Data** - Enterprise-grade security to protect sensitive information
+- **📈 Performance Reports** - Generate detailed reports on student and class performance
+- **👥 Role-Based Access** - Personalized views for teachers, administrators, students, and parents
 
-### `npm run build`
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 💻 Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project is built with modern web technologies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React** - Frontend library for building user interfaces
+<br>
 
-### `npm run eject`
+## 🔧 Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Follow these steps to get mojDnevnik running locally:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Clone the repository
+git clone https://github.com/emirkugic/mojDnevnik.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Navigate to project directory
+cd mojDnevnik
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Install dependencies
+npm install
 
-## Learn More
+# Start the development server
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The application will be available at `http://localhost:3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br>
 
-### Code Splitting
+## 📂 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+mojDnevnik/
+├── public/                 # Static files
+├── src/                    # Source files
+│   ├── components/         # Reusable components
+│   │   ├── layout/         # Layout components
+│   │   └── sections/       # Page section components
+│   ├── pages/              # Page components
+│   │   ├── About/          # About page
+│   │   ├── Contact/        # Contact page
+│   │   ├── Gallery/        # Gallery page
+│   │   ├── Homepage/       # Homepage
+│   │   └── Pricing/        # Pricing page
+│   ├── styles/             # Global styles
+│   ├── App.js              # Main App component
+│   └── index.js            # Entry point
+└── README.md               # Project documentation
+```
 
-### Analyzing the Bundle Size
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🖼️ Page Previews
 
-### Making a Progressive Web App
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="readme-assets/homepage.png" alt="Homepage" width="400px" /><br />
+        <b>Homepage</b>
+      </td>
+      <td align="center">
+        <img src="readme-assets/gallery.png" alt="Gallery Page" width="400px" /><br />
+        <b>Gallery</b>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="readme-assets/pricing.png" alt="Pricing Page" width="400px" /><br />
+        <b>Pricing</b>
+      </td>
+      <td align="center">
+        <img src="readme-assets/contact.png" alt="Contact Page" width="400px" /><br />
+        <b>Contact</b>
+      </td>
+    </tr>
+  </table>
+</div>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<br>
 
-### Advanced Configuration
+## 📝 User Roles
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+mojDnevnik provides tailored experiences for different user roles:
 
-### Deployment
+| Role | Features |
+|------|----------|
+| **👨‍🏫 Teachers** | Record lessons, track attendance, create assessments, grade students |
+| **👩‍💼 Class Teachers** | All teacher features + class overview, generate reports, parent communication |
+| **👨‍👩‍👧‍👦 Parents** | View child's progress, check attendance, see assessments, download reports |
+| **👨‍🎓 Students** | Access grades, view schedule, see attendance, track progress |
+| **👩‍💻 Administrators** | Manage all users, system configuration, school-wide reports, complete control |
+| **🔧 IT Support** | User management, technical support, system updates, data backup |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<br>
 
-### `npm run build` fails to minify
+## 📊 Benefits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **⏱️ Save Time** - Automate routine tasks and reduce paperwork by up to 70%
+- **🎯 Improve Quality** - Enhance educational standards with data-driven insights
+- **📈 Track Progress** - Monitor student development with comprehensive metrics
+- **🔄 Streamline Communication** - Connect all stakeholders on a single platform
+
+<br>
+
+## 🛠️ Customization
+
+mojDnevnik can be customized to fit your school's specific needs. The codebase uses CSS variables for theming:
+
+```css
+:root {
+  /* Color Palette */
+  --md-primary-color: #4361ee;
+  --md-primary-dark: #3a0ca3;
+  --md-primary-light: #4cc9f0;
+  --md-accent-color: #f72585;
+  /* ... more variables ... */
+}
+```
+
+<br>
+
+## 🤝 Contributing
+
+We welcome contributions to mojDnevnik! Please follow these steps:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+<br>
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+<br>
+
+## 📞 Contact
+
+Have questions or need support? Reach out to us:
+
+- Website: [www.mojdnevnik.com](https://www.mojdnevnik.com)
+
+<br>
+
+<div align="center">
+  <img src="readme-assets/logo.png" alt="mojDnevnik Logo" width="200px" />
+  <p>© 2025 mojDnevnik. All rights reserved.</p>
+</div>
