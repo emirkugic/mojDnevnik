@@ -1447,7 +1447,7 @@ section {
 	width: 100%;
 	overflow: hidden;
 	line-height: 0;
-	transform: translateY(-99%);
+	transform: translateY(-99%) rotate(180deg);
 }
 
 .footer-wave svg {
