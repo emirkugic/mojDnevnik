@@ -33,11 +33,6 @@ const Navbar = () => {
 				>
 					<ul>
 						<li>
-							<Link to="/gallery" onClick={() => setIsMenuOpen(false)}>
-								Gallery
-							</Link>
-						</li>
-						<li>
 							<Link to="/about" onClick={() => setIsMenuOpen(false)}>
 								About Us
 							</Link>
@@ -48,10 +43,15 @@ const Navbar = () => {
 							</Link>
 						</li>
 						<li>
+							<Link to="/gallery" onClick={() => setIsMenuOpen(false)}>
+								Gallery
+							</Link>
+						</li>
+						{/* <li>
 							<Link to="/blog" onClick={() => setIsMenuOpen(false)}>
 								Blog
 							</Link>
-						</li>
+						</li> */}
 						<li>
 							<Link to="/contact" onClick={() => setIsMenuOpen(false)}>
 								Contact
