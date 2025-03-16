@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-// Fix icons import by using individual imports
+// Fix icons import by using direct imports instead
 import {
 	FaUserGraduate,
 	FaUserTie,
@@ -20,10 +20,19 @@ import {
 	FaChartLine,
 	FaUsers,
 	FaClipboardCheck,
-	FaFacebook,
+	FaCalendarAlt,
+	FaUserCog,
+	FaFileAlt,
+	FaFacebookF,
 	FaTwitter,
-	FaLinkedin,
+	FaLinkedinIn,
 	FaInstagram,
+	FaEnvelope,
+	FaLaptopCode,
+	FaBell,
+	FaBullhorn,
+	FaHandshake,
+	FaHeadset,
 } from "react-icons/fa";
 
 import "./Homepage.css";
@@ -32,17 +41,7 @@ const Homepage = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [activeTestimonial, setActiveTestimonial] = useState(0);
 	const [isScrolled, setIsScrolled] = useState(false);
-	const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 	const [hoveredFeature, setHoveredFeature] = useState(null);
-
-	// Cursor effect
-	useEffect(() => {
-		const handleMouseMove = (e) => {
-			setCursorPosition({ x: e.clientX, y: e.clientY });
-		};
-		window.addEventListener("mousemove", handleMouseMove);
-		return () => window.removeEventListener("mousemove", handleMouseMove);
-	}, []);
 
 	// Scroll effect for navbar
 	useEffect(() => {
@@ -103,6 +102,10 @@ const Homepage = () => {
 		threshold: 0.1,
 	});
 	const [testimonialsRef, testimonialsInView] = useInView({
+		triggerOnce: true,
+		threshold: 0.1,
+	});
+	const [galleryRef, galleryInView] = useInView({
 		triggerOnce: true,
 		threshold: 0.1,
 	});
@@ -167,7 +170,7 @@ const Homepage = () => {
 		},
 	];
 
-	// User roles data
+	// User roles data - made it 6 for symmetry
 	const roles = [
 		{
 			title: "Teachers",
@@ -224,6 +227,17 @@ const Homepage = () => {
 				"Complete control",
 			],
 		},
+		{
+			title: "IT Support",
+			icon: <FaLaptopCode />,
+			color: "#22577A",
+			features: [
+				"User management",
+				"Technical support",
+				"System updates",
+				"Data backup",
+			],
+		},
 	];
 
 	// Benefits data
@@ -253,17 +267,32 @@ const Homepage = () => {
 		{ value: "50+", label: "Schools Using mojDnevnik" },
 	];
 
+	// Gallery items for the screenshot showcase
+	const galleryItems = [
+		{
+			image: "/image1.png",
+			title: "Dashboard Interface",
+			desc: "User-friendly dashboard with key information at a glance",
+		},
+		{
+			image: "/image2.png",
+			title: "Grade Management",
+			desc: "Easy-to-use grading system with detailed analytics",
+		},
+		{
+			image: "/image3.png",
+			title: "Mobile Experience",
+			desc: "Access the full system from any mobile device",
+		},
+		{
+			image: "/image4.png",
+			title: "Parent Portal",
+			desc: "Keep parents informed with our dedicated portal",
+		},
+	];
+
 	return (
 		<div className="homepage">
-			{/* Custom cursor effect */}
-			<div
-				className="cursor-effect"
-				style={{
-					left: `${cursorPosition.x}px`,
-					top: `${cursorPosition.y}px`,
-				}}
-			/>
-
 			{/* Navigation */}
 			<header className={`navbar ${isScrolled ? "scrolled" : ""}`}>
 				<div className="container navbar-container">
@@ -281,17 +310,32 @@ const Homepage = () => {
 							</li>
 							<li>
 								<a href="#roles" onClick={() => setIsMenuOpen(false)}>
-									User Roles
+									For Schools
 								</a>
 							</li>
 							<li>
-								<a href="#benefits" onClick={() => setIsMenuOpen(false)}>
-									Benefits
+								<a href="#gallery" onClick={() => setIsMenuOpen(false)}>
+									Gallery
 								</a>
 							</li>
 							<li>
-								<a href="#testimonials" onClick={() => setIsMenuOpen(false)}>
-									Testimonials
+								<a href="#about" onClick={() => setIsMenuOpen(false)}>
+									About Us
+								</a>
+							</li>
+							<li>
+								<a href="#pricing" onClick={() => setIsMenuOpen(false)}>
+									Pricing
+								</a>
+							</li>
+							<li>
+								<a href="#blog" onClick={() => setIsMenuOpen(false)}>
+									Blog
+								</a>
+							</li>
+							<li>
+								<a href="#contact" onClick={() => setIsMenuOpen(false)}>
+									Contact
 								</a>
 							</li>
 							<li className="cta-link">
@@ -316,6 +360,8 @@ const Homepage = () => {
 					<div className="shape shape-1"></div>
 					<div className="shape shape-2"></div>
 					<div className="shape shape-3"></div>
+					<div className="shape shape-4"></div>
+					<div className="shape shape-5"></div>
 				</div>
 				<div className="container hero-container">
 					<motion.div
@@ -361,6 +407,18 @@ const Homepage = () => {
 							<div className="floating-card card-2">
 								<FaChartBar />
 								<span>Grades Updated</span>
+							</div>
+							<div className="floating-card card-3">
+								<FaCalendarAlt />
+								<span>Schedule Created</span>
+							</div>
+							<div className="floating-card card-4">
+								<FaBell />
+								<span>Notifications Sent</span>
+							</div>
+							<div className="floating-card card-5">
+								<FaFileAlt />
+								<span>Reports Generated</span>
 							</div>
 						</div>
 					</motion.div>
@@ -506,6 +564,48 @@ const Homepage = () => {
 				</div>
 			</section>
 
+			{/* Gallery Section */}
+			<section id="gallery" className="gallery-section" ref={galleryRef}>
+				<div className="container">
+					<motion.div
+						className="section-header"
+						initial="hidden"
+						animate={galleryInView ? "visible" : "hidden"}
+						variants={fadeInUp}
+					>
+						<h2>
+							See it in <span className="gradient-text">Action</span>
+						</h2>
+						<p>Explore screenshots of mojDnevnik in use</p>
+					</motion.div>
+
+					<motion.div
+						className="gallery-grid"
+						initial="hidden"
+						animate={galleryInView ? "visible" : "hidden"}
+						variants={staggerContainer}
+					>
+						{galleryItems.map((item, index) => (
+							<motion.div
+								key={index}
+								className="gallery-item"
+								variants={fadeInUp}
+							>
+								<div className="gallery-image">
+									<img src={item.image} alt={item.title} />
+									<div className="gallery-overlay">
+										<div className="gallery-content">
+											<h3>{item.title}</h3>
+											<p>{item.desc}</p>
+										</div>
+									</div>
+								</div>
+							</motion.div>
+						))}
+					</motion.div>
+				</div>
+			</section>
+
 			{/* Benefits Section */}
 			<section id="benefits" className="benefits-section" ref={benefitsRef}>
 				<div className="container">
@@ -560,6 +660,58 @@ const Homepage = () => {
 							<div className="image-card-overlay"></div>
 						</div>
 					</motion.div>
+				</div>
+			</section>
+
+			{/* Integration Section with Images */}
+			<section id="integrations" className="integrations-section">
+				<div className="container">
+					<div className="section-header">
+						<h2>
+							Seamless <span className="gradient-text">Integrations</span>
+						</h2>
+						<p>Connect with the tools your school already uses</p>
+					</div>
+
+					<div className="integration-showcase">
+						<div className="integration-text">
+							<h3>Everything in One Place</h3>
+							<p>
+								mojDnevnik connects with your existing school systems for
+								seamless data flow between platforms.
+							</p>
+							<ul className="integration-features">
+								<li>
+									<FaCheckSquare /> Calendar synchronization
+								</li>
+								<li>
+									<FaCheckSquare /> Email integration
+								</li>
+								<li>
+									<FaCheckSquare /> Document management
+								</li>
+								<li>
+									<FaCheckSquare /> Learning management systems
+								</li>
+								<li>
+									<FaCheckSquare /> Student information systems
+								</li>
+							</ul>
+							<a href="#contact" className="btn btn-secondary">
+								Learn About Integrations
+							</a>
+						</div>
+						<div className="integration-images">
+							<div className="image-stack">
+								<div className="stack-image image-1">
+									<img src="/image4.png" alt="Calendar Integration" />
+								</div>
+								<div className="stack-image image-2">
+									<img src="/image5.png" alt="Email Integration" />
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -715,13 +867,13 @@ const Homepage = () => {
 							<p>The complete school management solution</p>
 							<div className="social-links">
 								<a href="#" aria-label="Facebook">
-									<FaFacebook />
+									<FaFacebookF />
 								</a>
 								<a href="#" aria-label="Twitter">
 									<FaTwitter />
 								</a>
 								<a href="#" aria-label="LinkedIn">
-									<FaLinkedin />
+									<FaLinkedinIn />
 								</a>
 								<a href="#" aria-label="Instagram">
 									<FaInstagram />

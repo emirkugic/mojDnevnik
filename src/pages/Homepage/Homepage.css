@@ -36,32 +36,6 @@ body {
 	background-color: var(--bg-white);
 }
 
-/* Custom cursor effect */
-.cursor-effect {
-	position: fixed;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	background: radial-gradient(
-		circle,
-		rgba(67, 97, 238, 0.15) 0%,
-		rgba(76, 201, 240, 0.05) 70%,
-		transparent 100%
-	);
-	pointer-events: none;
-	z-index: 9999;
-	transform: translate(-50%, -50%);
-	opacity: 0.6;
-	transition: transform 0.1s ease;
-	display: none;
-}
-
-@media (min-width: 1024px) {
-	.cursor-effect {
-		display: block;
-	}
-}
-
 .container {
 	width: 100%;
 	max-width: 1200px;
@@ -264,7 +238,7 @@ section {
 
 .nav-links ul {
 	display: flex;
-	gap: 35px;
+	gap: 28px;
 	align-items: center;
 }
 
@@ -389,6 +363,32 @@ section {
 	animation: float 8s ease-in-out infinite;
 }
 
+.shape-4 {
+	bottom: 30%;
+	left: 25%;
+	width: 250px;
+	height: 250px;
+	background: radial-gradient(
+		circle,
+		rgba(76, 201, 240, 0.08) 0%,
+		rgba(76, 201, 240, 0) 70%
+	);
+	animation: float 12s ease-in-out infinite;
+}
+
+.shape-5 {
+	top: 15%;
+	right: 15%;
+	width: 180px;
+	height: 180px;
+	background: radial-gradient(
+		circle,
+		rgba(247, 37, 133, 0.05) 0%,
+		rgba(247, 37, 133, 0) 70%
+	);
+	animation: float 9s ease-in-out infinite;
+}
+
 @keyframes float {
 	0% {
 		transform: translateY(0) rotate(0);
@@ -511,7 +511,7 @@ section {
 	align-items: center;
 	gap: 10px;
 	box-shadow: var(--shadow-md);
-	animation: float-card 3s ease-in-out infinite;
+	z-index: 5;
 }
 
 .floating-card svg {
@@ -527,12 +527,32 @@ section {
 .card-1 {
 	top: 15%;
 	left: -10%;
-	animation-delay: 0.5s;
+	animation: float-card 3s ease-in-out infinite;
 }
 
 .card-2 {
 	bottom: 10%;
 	right: -5%;
+	animation: float-card 3s ease-in-out infinite 0.5s;
+}
+
+.card-3 {
+	top: 10%;
+	right: 5%;
+	animation: float-card 3s ease-in-out infinite 1s;
+}
+
+.card-4 {
+	bottom: 20%;
+	left: 5%;
+	animation: float-card 3s ease-in-out infinite 1.5s;
+}
+
+.card-5 {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: float-card 3s ease-in-out infinite 0.75s;
 }
 
 @keyframes float-card {
@@ -746,7 +766,7 @@ section {
 
 .roles-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-columns: repeat(3, 1fr);
 	gap: 30px;
 	position: relative;
 	z-index: 1;
@@ -841,6 +861,82 @@ section {
 
 .role-card ul li:last-child {
 	margin-bottom: 0;
+}
+
+/* Gallery Section */
+.gallery-section {
+	background-color: var(--bg-white);
+	position: relative;
+	padding: 120px 0;
+}
+
+.gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 30px;
+}
+
+.gallery-item {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow-lg);
+	transition: var(--transition);
+}
+
+.gallery-item:hover {
+	transform: translateY(-10px);
+	box-shadow: var(--shadow-xl);
+}
+
+.gallery-image {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--border-radius);
+}
+
+.gallery-image img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: var(--border-radius);
+	transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-image img {
+	transform: scale(1.05);
+}
+
+.gallery-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+	padding: 30px 20px 20px;
+	transition: var(--transition);
+	opacity: 0;
+	transform: translateY(20px);
+}
+
+.gallery-item:hover .gallery-overlay {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.gallery-content {
+	color: var(--text-white);
+}
+
+.gallery-content h3 {
+	font-size: 1.25rem;
+	margin-bottom: 0.5em;
+}
+
+.gallery-content p {
+	font-size: 0.9375rem;
+	opacity: 0.9;
+	margin: 0;
 }
 
 /* Benefits Section */
@@ -943,6 +1039,102 @@ section {
 		rgba(247, 37, 133, 0.1),
 		transparent 70%
 	);
+}
+
+/* Integrations Section */
+.integrations-section {
+	background-color: var(--bg-light);
+	position: relative;
+	padding: 120px 0;
+}
+
+.integration-showcase {
+	display: flex;
+	align-items: center;
+	gap: 60px;
+	margin-top: 50px;
+}
+
+.integration-text {
+	flex: 1;
+}
+
+.integration-text h3 {
+	font-size: 1.75rem;
+	margin-bottom: 1em;
+	color: var(--text-dark);
+}
+
+.integration-text p {
+	font-size: 1.125rem;
+	color: var(--text-light);
+	margin-bottom: 1.5em;
+	line-height: 1.7;
+}
+
+.integration-features {
+	margin-bottom: 2em;
+}
+
+.integration-features li {
+	margin-bottom: 12px;
+	display: flex;
+	align-items: center;
+	font-size: 1.0625rem;
+	color: var(--text-dark);
+}
+
+.integration-features li svg {
+	margin-right: 12px;
+	color: var(--primary-color);
+	flex-shrink: 0;
+}
+
+.integration-images {
+	flex: 1;
+	position: relative;
+}
+
+.image-stack {
+	position: relative;
+	height: 450px;
+}
+
+.stack-image {
+	position: absolute;
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	box-shadow: var(--shadow-lg);
+	transition: var(--transition);
+}
+
+.stack-image img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	border-radius: var(--border-radius);
+}
+
+.image-1 {
+	width: 80%;
+	top: 0;
+	right: 0;
+	z-index: 2;
+}
+
+.image-2 {
+	width: 70%;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.integration-images:hover .image-1 {
+	transform: translateY(-10px);
+}
+
+.integration-images:hover .image-2 {
+	transform: translateY(10px);
 }
 
 /* Testimonials Section */
@@ -1505,6 +1697,20 @@ section {
 	.section-header h2 {
 		font-size: 2.5rem;
 	}
+
+	.integration-showcase {
+		flex-direction: column;
+	}
+
+	.integration-text {
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	.integration-features {
+		display: inline-block;
+		text-align: left;
+	}
 }
 
 @media (max-width: 991px) {
@@ -1543,6 +1749,14 @@ section {
 
 	.stats-grid {
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.roles-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.gallery-grid {
+		grid-template-columns: 1fr;
 	}
 }
 
@@ -1678,5 +1892,19 @@ section {
 
 	.floating-card {
 		display: none;
+	}
+
+	.image-stack {
+		height: auto;
+	}
+
+	.stack-image {
+		position: relative;
+		margin-bottom: 20px;
+		width: 100% !important;
+	}
+
+	.gallery-grid {
+		gap: 20px;
 	}
 }
