@@ -1,658 +1,808 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+// Fix icons import by using individual imports
+import {
+	FaUserGraduate,
+	FaUserTie,
+	FaBook,
+	FaCheckSquare,
+	FaChartBar,
+	FaMobileAlt,
+	FaShieldAlt,
+	FaMedal,
+	FaClock,
+	FaComments,
+	FaBars,
+	FaTimes,
+	FaChevronRight,
+	FaGraduationCap,
+	FaChartLine,
+	FaUsers,
+	FaClipboardCheck,
+	FaFacebook,
+	FaTwitter,
+	FaLinkedin,
+	FaInstagram,
+} from "react-icons/fa";
+
 import "./Homepage.css";
 
 const Homepage = () => {
-	const [activeTab, setActiveTab] = useState("teachers");
-	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [activeTestimonial, setActiveTestimonial] = useState(0);
+	const [isScrolled, setIsScrolled] = useState(false);
+	const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+	const [hoveredFeature, setHoveredFeature] = useState(null);
 
-	const toggleMobileMenu = () => {
-		setMobileMenuOpen(!mobileMenuOpen);
+	// Cursor effect
+	useEffect(() => {
+		const handleMouseMove = (e) => {
+			setCursorPosition({ x: e.clientX, y: e.clientY });
+		};
+		window.addEventListener("mousemove", handleMouseMove);
+		return () => window.removeEventListener("mousemove", handleMouseMove);
+	}, []);
+
+	// Scroll effect for navbar
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 50);
+		};
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	// Animation variants
+	const fadeInUp = {
+		hidden: { opacity: 0, y: 30 },
+		visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 	};
+
+	const staggerContainer = {
+		hidden: { opacity: 0 },
+		visible: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.2,
+			},
+		},
+	};
+
+	const counterAnimation = {
+		hidden: { opacity: 0, scale: 0.8 },
+		visible: {
+			opacity: 1,
+			scale: 1,
+			transition: {
+				duration: 0.8,
+				delay: 0.3,
+			},
+		},
+	};
+
+	// InView hooks for animations
+	const [heroRef, heroInView] = useInView({
+		triggerOnce: true,
+		threshold: 0.1,
+	});
+	const [statsRef, statsInView] = useInView({
+		triggerOnce: true,
+		threshold: 0.1,
+	});
+	const [featuresRef, featuresInView] = useInView({
+		triggerOnce: true,
+		threshold: 0.1,
+	});
+	const [rolesRef, rolesInView] = useInView({
+		triggerOnce: true,
+		threshold: 0.1,
+	});
+	const [benefitsRef, benefitsInView] = useInView({
+		triggerOnce: true,
+		threshold: 0.1,
+	});
+	const [testimonialsRef, testimonialsInView] = useInView({
+		triggerOnce: true,
+		threshold: 0.1,
+	});
+	const [ctaRef, ctaInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
+	// Testimonials data (placeholders)
+	const testimonials = [
+		{
+			quote:
+				"mojDnevnik transformed how we manage our school. Everything from attendance to grades is now streamlined in one place, saving us countless hours every week.",
+			name: "Ana Petrović",
+			role: "School Principal",
+			image: "/image3.png",
+		},
+		{
+			quote:
+				"As a parent, I love being able to check my children's progress directly from my phone. The interface is intuitive and keeps me informed about their academic journey.",
+			name: "Marko Novak",
+			role: "Parent",
+			image: "/image4.png",
+		},
+		{
+			quote:
+				"The reporting features save me hours each week. I can focus more on teaching and less on paperwork. It's become indispensable to our school's operations.",
+			name: "Ivana Kovač",
+			role: "Class Teacher",
+			image: "/image5.png",
+		},
+	];
+
+	// Features data
+	const features = [
+		{
+			icon: <FaBook />,
+			title: "Lesson Management",
+			desc: "Log and organize lessons efficiently with integrated curriculum tracking",
+		},
+		{
+			icon: <FaCheckSquare />,
+			title: "Attendance Tracking",
+			desc: "Mark and monitor student attendance with real-time analytics",
+		},
+		{
+			icon: <FaChartBar />,
+			title: "Assessments & Grading",
+			desc: "Create assessments and grade students with customizable criteria",
+		},
+		{
+			icon: <FaUsers />,
+			title: "Class Overview",
+			desc: "Comprehensive class performance insights with detailed analytics",
+		},
+		{
+			icon: <FaMobileAlt />,
+			title: "Mobile Responsive",
+			desc: "Access from any device, anywhere with our responsive design",
+		},
+		{
+			icon: <FaShieldAlt />,
+			title: "Secure Access",
+			desc: "Role-based permissions system ensuring data security",
+		},
+	];
+
+	// User roles data
+	const roles = [
+		{
+			title: "Teachers",
+			icon: <FaUserGraduate />,
+			color: "#4361EE",
+			features: [
+				"Record lessons",
+				"Track attendance",
+				"Create assessments",
+				"Grade students",
+			],
+		},
+		{
+			title: "Class Teachers",
+			icon: <FaUserTie />,
+			color: "#3A0CA3",
+			features: [
+				"All teacher features",
+				"Class overview",
+				"Generate reports",
+				"Parent communication",
+			],
+		},
+		{
+			title: "Parents",
+			icon: <FaComments />,
+			color: "#4CC9F0",
+			features: [
+				"View child's progress",
+				"Check attendance",
+				"See assessments",
+				"Download reports",
+			],
+		},
+		{
+			title: "Students",
+			icon: <FaGraduationCap />,
+			color: "#F72585",
+			features: [
+				"Access grades",
+				"View schedule",
+				"See attendance",
+				"Track progress",
+			],
+		},
+		{
+			title: "Administrators",
+			icon: <FaShieldAlt />,
+			color: "#7209B7",
+			features: [
+				"Manage all users",
+				"System configuration",
+				"School-wide reports",
+				"Complete control",
+			],
+		},
+	];
+
+	// Benefits data
+	const benefits = [
+		{
+			icon: <FaClock />,
+			title: "Save Time",
+			desc: "Automate routine tasks and reduce paperwork by up to 70%",
+		},
+		{
+			icon: <FaMedal />,
+			title: "Improve Quality",
+			desc: "Enhance educational standards with data-driven insights and analytics",
+		},
+		{
+			icon: <FaChartLine />,
+			title: "Track Progress",
+			desc: "Monitor student development with comprehensive metrics and visual reports",
+		},
+	];
+
+	// Stats data
+	const stats = [
+		{ value: "85%", label: "Time Saved on Administrative Tasks" },
+		{ value: "92%", label: "Satisfaction Rate among Users" },
+		{ value: "10k+", label: "Active Users" },
+		{ value: "50+", label: "Schools Using mojDnevnik" },
+	];
 
 	return (
 		<div className="homepage">
+			{/* Custom cursor effect */}
+			<div
+				className="cursor-effect"
+				style={{
+					left: `${cursorPosition.x}px`,
+					top: `${cursorPosition.y}px`,
+				}}
+			/>
+
 			{/* Navigation */}
-			<nav className="navbar">
-				<div className="container">
-					<div className="navbar-brand">
-						<h1>eDnevnik</h1>
+			<header className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+				<div className="container navbar-container">
+					<div className="logo">
+						<h1>
+							moj<span>Dnevnik</span>
+						</h1>
 					</div>
-					<div className={`navbar-menu ${mobileMenuOpen ? "active" : ""}`}>
+					<nav className={`nav-links ${isMenuOpen ? "open" : ""}`}>
 						<ul>
 							<li>
-								<a href="#features">Funkcije</a>
+								<a href="#features" onClick={() => setIsMenuOpen(false)}>
+									Features
+								</a>
 							</li>
 							<li>
-								<a href="#roles">Za korisnike</a>
+								<a href="#roles" onClick={() => setIsMenuOpen(false)}>
+									User Roles
+								</a>
 							</li>
 							<li>
-								<a href="#pricing">Cijene</a>
+								<a href="#benefits" onClick={() => setIsMenuOpen(false)}>
+									Benefits
+								</a>
 							</li>
 							<li>
-								<a href="#faq">Česta pitanja</a>
+								<a href="#testimonials" onClick={() => setIsMenuOpen(false)}>
+									Testimonials
+								</a>
 							</li>
-							<li>
-								<a href="#contact">Kontakt</a>
+							<li className="cta-link">
+								<a href="#contact" onClick={() => setIsMenuOpen(false)}>
+									Request Demo
+								</a>
 							</li>
 						</ul>
-					</div>
-					<div className="navbar-cta">
-						<a href="e-dnevnik.alamelschools.ba" className="btn-secondary">
-							Isprobaj Demo
-						</a>
-					</div>
-					<div className="mobile-toggle" onClick={toggleMobileMenu}>
-						<span></span>
-						<span></span>
-						<span></span>
+					</nav>
+					<div
+						className="mobile-menu-btn"
+						onClick={() => setIsMenuOpen(!isMenuOpen)}
+					>
+						{isMenuOpen ? <FaTimes /> : <FaBars />}
 					</div>
 				</div>
-			</nav>
+			</header>
 
 			{/* Hero Section */}
-			<section className="hero">
-				<div className="container">
-					<div className="hero-content">
-						<h1>Modernizirajte upravljanje vašom školom</h1>
+			<section className="hero-section" ref={heroRef}>
+				<div className="hero-bg-shapes">
+					<div className="shape shape-1"></div>
+					<div className="shape shape-2"></div>
+					<div className="shape shape-3"></div>
+				</div>
+				<div className="container hero-container">
+					<motion.div
+						className="hero-content"
+						initial="hidden"
+						animate={heroInView ? "visible" : "hidden"}
+						variants={fadeInUp}
+					>
+						<div className="hero-badge">School Management System</div>
+						<h1>
+							Simplify School <span className="gradient-text">Management</span>
+						</h1>
+						<h2>One platform for teachers, students, and parents</h2>
 						<p>
-							Kompletno digitalno rješenje za pojednostavljenje praćenja
-							prisustva, upravljanja ocjenama i komunikacije između roditelja i
-							nastavnika za škole koje gledaju u budućnost.
+							mojDnevnik is a comprehensive school management system that
+							streamlines attendance, grading, assessments, and communication -
+							all in one place, accessible anywhere.
 						</p>
 						<div className="hero-buttons">
-							<a href="e-dnevnik.alamelschools.ba" className="btn-primary">
-								Započni besplatnu probu
+							<a href="#contact" className="btn btn-primary">
+								Get Started{" "}
+								<span className="btn-icon">
+									<FaChevronRight />
+								</span>
 							</a>
-							<a href="#demo" className="btn-video">
-								<span className="play-icon">▶</span>
-								Pogledaj Demo
+							<a href="#features" className="btn btn-secondary">
+								Learn More
 							</a>
 						</div>
-					</div>
-					<div className="hero-image">
-						<img
-							src="/image1.png"
-							alt="e-Dnevnik Kontrolna ploča"
-							className="main-screenshot"
-						/>
-						<div className="floating-element fe-1"></div>
-						<div className="floating-element fe-2"></div>
-						<div className="floating-element fe-3"></div>
-					</div>
+					</motion.div>
+					<motion.div
+						className="hero-image"
+						initial={{ opacity: 0, x: 50 }}
+						animate={heroInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+						transition={{ duration: 0.6, delay: 0.2 }}
+					>
+						<div className="image-wrapper">
+							<img src="/image1.png" alt="mojDnevnik Dashboard Preview" />
+							<div className="floating-card card-1">
+								<FaCheckSquare />
+								<span>Attendance Tracked</span>
+							</div>
+							<div className="floating-card card-2">
+								<FaChartBar />
+								<span>Grades Updated</span>
+							</div>
+						</div>
+					</motion.div>
 				</div>
 			</section>
 
-			{/* Main Features Section */}
-			<section id="features" className="features">
+			{/* Stats Section */}
+			<section className="stats-section" ref={statsRef}>
 				<div className="container">
-					<div className="section-header">
-						<span className="section-tag">GLAVNE FUNKCIJE</span>
-						<h2>Sve što vam je potrebno za efikasno vođenje škole</h2>
-						<p>
-							Naša platforma kombinuje sve osnovne alate u jednom intuitivnom
-							interfejsu
-						</p>
-					</div>
-
-					<div className="feature-cards">
-						<div className="feature-card">
-							<div className="feature-icon attendance-icon"></div>
-							<h3>Praćenje prisustva</h3>
-							<p>
-								Pratite i izvještavajte o prisustvu učenika jednim klikom.
-								Generišite korisne izvještaje i identifikujte obrasce.
-							</p>
-						</div>
-						<div className="feature-card">
-							<div className="feature-icon grade-icon"></div>
-							<h3>Upravljanje ocjenama</h3>
-							<p>
-								Kreirajte prilagođene kriterije ocjenjivanja i jednostavno
-								upravljajte ocjenama učenika iz svih predmeta.
-							</p>
-						</div>
-						<div className="feature-card">
-							<div className="feature-icon parent-icon"></div>
-							<h3>Komunikacija s roditeljima</h3>
-							<p>
-								Držite roditelje informisanim i uključenim s ažuriranjima u
-								realnom vremenu o ocjenama, prisustvu i ponašanju.
-							</p>
-						</div>
-						<div className="feature-card">
-							<div className="feature-icon schedule-icon"></div>
-							<h3>Raspored časova</h3>
-							<p>
-								Jednostavno kreirajte i upravljajte rasporedom časova,
-								izbjegavajući konflikte i optimizirajući raspodjelu resursa.
-							</p>
-						</div>
-					</div>
+					<motion.div
+						className="stats-grid"
+						initial="hidden"
+						animate={statsInView ? "visible" : "hidden"}
+						variants={staggerContainer}
+					>
+						{stats.map((stat, index) => (
+							<motion.div
+								key={index}
+								className="stat-card"
+								variants={counterAnimation}
+							>
+								<h3>{stat.value}</h3>
+								<p>{stat.label}</p>
+							</motion.div>
+						))}
+					</motion.div>
 				</div>
 			</section>
 
-			{/* Screenshot Showcase Section */}
-			<section className="showcase">
+			{/* Features Section */}
+			<section id="features" className="features-section" ref={featuresRef}>
 				<div className="container">
-					<div className="section-header">
-						<span className="section-tag">INTERFEJS</span>
-						<h2>Lijep, intuitivan i jednostavan za korištenje</h2>
-						<p>Dizajniran s nastavnicima i administratorima na umu</p>
-					</div>
+					<motion.div
+						className="section-header"
+						initial="hidden"
+						animate={featuresInView ? "visible" : "hidden"}
+						variants={fadeInUp}
+					>
+						<h2>
+							Powerful <span className="gradient-text">Features</span>
+						</h2>
+						<p>Everything you need to run your school efficiently</p>
+					</motion.div>
 
-					<div className="showcase-grid">
-						<div className="showcase-item main">
-							<img src="/image2.png" alt="Pregled kontrolne ploče" />
-							<div className="showcase-caption">
-								<h3>Sveobuhvatna kontrolna ploča</h3>
-								<p>Dobijte brzi pregled svega važnog na jednom mjestu</p>
+					<motion.div
+						className="features-grid"
+						initial="hidden"
+						animate={featuresInView ? "visible" : "hidden"}
+						variants={staggerContainer}
+					>
+						{features.map((feature, index) => (
+							<motion.div
+								key={index}
+								className="feature-card"
+								variants={fadeInUp}
+								onMouseEnter={() => setHoveredFeature(index)}
+								onMouseLeave={() => setHoveredFeature(null)}
+							>
+								<div
+									className={`feature-icon ${
+										hoveredFeature === index ? "hovered" : ""
+									}`}
+								>
+									{feature.icon}
+								</div>
+								<h3>{feature.title}</h3>
+								<p>{feature.desc}</p>
+							</motion.div>
+						))}
+					</motion.div>
+
+					<motion.div
+						className="features-showcase"
+						initial={{ opacity: 0, y: 30 }}
+						animate={
+							featuresInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+						}
+						transition={{ duration: 0.6, delay: 0.4 }}
+					>
+						<div className="showcase-wrapper">
+							<img
+								src="/image2.png"
+								alt="mojDnevnik Features Showcase"
+								className="showcase-image"
+							/>
+							<div className="showcase-overlay">
+								<div className="overlay-content">
+									<h3>Intuitive Interface</h3>
+									<p>Designed for ease of use across all devices</p>
+								</div>
 							</div>
 						</div>
-						<div className="showcase-item">
-							<img src="/image3.png" alt="Modul za prisustvo" />
-							<div className="showcase-caption">
-								<p>Modul za prisustvo</p>
-							</div>
-						</div>
-						<div className="showcase-item">
-							<img src="/image4.png" alt="Ekran za unos ocjena" />
-							<div className="showcase-caption">
-								<p>Interfejs za unos ocjena</p>
-							</div>
-						</div>
-						<div className="showcase-item">
-							<img src="/image5.png" alt="Portal za roditelje" />
-							<div className="showcase-caption">
-								<p>Portal za komunikaciju s roditeljima</p>
-							</div>
-						</div>
-					</div>
+					</motion.div>
 				</div>
 			</section>
 
 			{/* User Roles Section */}
-			<section id="roles" className="roles">
+			<section id="roles" className="roles-section" ref={rolesRef}>
+				<div className="roles-bg-pattern"></div>
 				<div className="container">
-					<div className="section-header">
-						<span className="section-tag">ZA SVAKOGA</span>
-						<h2>Prilagođeno za sve učesnike u školi</h2>
-						<p>Različiti prikazi i dozvole za svaku korisničku ulogu</p>
-					</div>
+					<motion.div
+						className="section-header"
+						initial="hidden"
+						animate={rolesInView ? "visible" : "hidden"}
+						variants={fadeInUp}
+					>
+						<h2>
+							Tailored for <span className="gradient-text">Everyone</span>
+						</h2>
+						<p>Specific features designed for each role in your school</p>
+					</motion.div>
 
-					<div className="tabs-container">
-						<div className="tabs-header">
-							<button
-								className={`tab-button ${
-									activeTab === "teachers" ? "active" : ""
-								}`}
-								onClick={() => setActiveTab("teachers")}
+					<motion.div
+						className="roles-container"
+						initial="hidden"
+						animate={rolesInView ? "visible" : "hidden"}
+						variants={staggerContainer}
+					>
+						{roles.map((role, index) => (
+							<motion.div
+								key={index}
+								className="role-card"
+								variants={fadeInUp}
+								style={{ borderTopColor: role.color }}
 							>
-								Za nastavnike
-							</button>
-							<button
-								className={`tab-button ${
-									activeTab === "admin" ? "active" : ""
-								}`}
-								onClick={() => setActiveTab("admin")}
-							>
-								Za administratore
-							</button>
-							<button
-								className={`tab-button ${
-									activeTab === "classTeacher" ? "active" : ""
-								}`}
-								onClick={() => setActiveTab("classTeacher")}
-							>
-								Za razrednike
-							</button>
-							<button
-								className={`tab-button ${
-									activeTab === "parents" ? "active" : ""
-								}`}
-								onClick={() => setActiveTab("parents")}
-							>
-								Za roditelje
-							</button>
-							<button
-								className={`tab-button ${
-									activeTab === "students" ? "active" : ""
-								}`}
-								onClick={() => setActiveTab("students")}
-							>
-								Za učenike
-							</button>
-						</div>
-
-						<div className="tabs-content">
-							{activeTab === "teachers" && (
-								<div className="tab-content">
-									<div className="tab-info">
-										<h3>Osnažite svoje podučavanje</h3>
-										<ul>
-											<li>Evidentirajte prisustvo u nekoliko sekundi</li>
-											<li>Unosite i upravljajte ocjenama efikasno</li>
-											<li>Komunicirajte direktno s roditeljima</li>
-											<li>Kreirajte i dijelite nastavne materijale</li>
-											<li>Pratite napredak učenika tokom vremena</li>
-										</ul>
-										<a
-											href="e-dnevnik.alamelschools.ba"
-											className="btn-outline"
-										>
-											Pogledaj demo za nastavnike
-										</a>
-									</div>
-									<div className="tab-image">
-										<img src="/image3.png" alt="Interfejs za nastavnike" />
-									</div>
+								<div
+									className="role-icon"
+									style={{ backgroundColor: role.color }}
+								>
+									{role.icon}
 								</div>
-							)}
-
-							{activeTab === "admin" && (
-								<div className="tab-content">
-									<div className="tab-info">
-										<h3>Pojednostavite administraciju</h3>
-										<ul>
-											<li>Upravljajte svim korisnicima i dodjeljujte uloge</li>
-											<li>Pratite metrike cijele škole u realnom vremenu</li>
-											<li>Generišite sveobuhvatne izvještaje</li>
-											<li>Prilagodite sistem potrebama vaše škole</li>
-											<li>Nadzirite rad nastavnika i učenika</li>
-										</ul>
-										<a
-											href="e-dnevnik.alamelschools.ba"
-											className="btn-outline"
-										>
-											Pogledaj demo za administratore
-										</a>
-									</div>
-									<div className="tab-image">
-										<img src="/image2.png" alt="Interfejs za administratore" />
-									</div>
-								</div>
-							)}
-
-							{activeTab === "classTeacher" && (
-								<div className="tab-content">
-									<div className="tab-info">
-										<h3>Efikasno upravljajte svojim razredom</h3>
-										<ul>
-											<li>Dobijte sveobuhvatan pregled svog razreda</li>
-											<li>Pratite obrasce prisustva i uspjeha</li>
-											<li>Komunicirajte s roditeljima bez napora</li>
-											<li>Kreirajte i dijelite obavijesti za razred</li>
-											<li>Upravljajte događajima i aktivnostima razreda</li>
-										</ul>
-										<a
-											href="e-dnevnik.alamelschools.ba"
-											className="btn-outline"
-										>
-											Pogledaj demo za razrednike
-										</a>
-									</div>
-									<div className="tab-image">
-										<img src="/image4.png" alt="Interfejs za razrednike" />
-									</div>
-								</div>
-							)}
-
-							{activeTab === "parents" && (
-								<div className="tab-content">
-									<div className="tab-info">
-										<h3>Ostanite povezani s obrazovanjem vašeg djeteta</h3>
-										<ul>
-											<li>Pogledajte ocjene i prisustvo u realnom vremenu</li>
-											<li>Komunicirajte direktno s nastavnicima</li>
-											<li>Primajte važne obavijesti</li>
-											<li>Pratite domaće zadaće i zadatke</li>
-											<li>Pratite ukupni akademski napredak</li>
-										</ul>
-										<a
-											href="e-dnevnik.alamelschools.ba"
-											className="btn-outline"
-										>
-											Pogledaj demo za roditelje
-										</a>
-									</div>
-									<div className="tab-image">
-										<img src="/image5.png" alt="Interfejs za roditelje" />
-									</div>
-								</div>
-							)}
-
-							{activeTab === "students" && (
-								<div className="tab-content">
-									<div className="tab-info">
-										<h3>Preuzmite kontrolu nad svojim učenjem</h3>
-										<ul>
-											<li>Provjerite ocjene i prisustvo</li>
-											<li>Pristupite domaćim zadaćama i zadacima</li>
-											<li>Pogledajte povratne informacije nastavnika</li>
-											<li>Pratite svoj akademski napredak</li>
-											<li>Budite u toku sa školskim događajima</li>
-										</ul>
-										<a
-											href="e-dnevnik.alamelschools.ba"
-											className="btn-outline"
-										>
-											Pogledaj demo za učenike
-										</a>
-									</div>
-									<div className="tab-image">
-										<img src="/image1.png" alt="Interfejs za učenike" />
-									</div>
-								</div>
-							)}
-						</div>
-					</div>
+								<h3>{role.title}</h3>
+								<ul>
+									{role.features.map((feature, idx) => (
+										<li key={idx}>
+											<FaChevronRight /> {feature}
+										</li>
+									))}
+								</ul>
+							</motion.div>
+						))}
+					</motion.div>
 				</div>
 			</section>
 
-			{/* Early Adopter / Pricing Section */}
-			<section id="pricing" className="pricing">
+			{/* Benefits Section */}
+			<section id="benefits" className="benefits-section" ref={benefitsRef}>
 				<div className="container">
-					<div className="section-header">
-						<span className="section-tag">PONUDA ZA LANSIRANJE</span>
-						<h2>Pogodnosti za rane korisnike</h2>
+					<div className="benefits-content">
+						<motion.div
+							className="section-header"
+							initial="hidden"
+							animate={benefitsInView ? "visible" : "hidden"}
+							variants={fadeInUp}
+						>
+							<h2>
+								Why Choose <span className="gradient-text">mojDnevnik</span>?
+							</h2>
+							<p>
+								Transform how your school operates with our comprehensive
+								solution
+							</p>
+						</motion.div>
+
+						<motion.div
+							className="benefits-list"
+							initial="hidden"
+							animate={benefitsInView ? "visible" : "hidden"}
+							variants={staggerContainer}
+						>
+							{benefits.map((benefit, index) => (
+								<motion.div
+									key={index}
+									className="benefit-item"
+									variants={fadeInUp}
+								>
+									<div className="benefit-icon">{benefit.icon}</div>
+									<div className="benefit-text">
+										<h3>{benefit.title}</h3>
+										<p>{benefit.desc}</p>
+									</div>
+								</motion.div>
+							))}
+						</motion.div>
+					</div>
+
+					<motion.div
+						className="benefits-image"
+						initial={{ opacity: 0, x: -50 }}
+						animate={
+							benefitsInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
+						}
+						transition={{ duration: 0.6, delay: 0.3 }}
+					>
+						<div className="image-card">
+							<img src="/image3.png" alt="Teacher using mojDnevnik" />
+							<div className="image-card-overlay"></div>
+						</div>
+					</motion.div>
+				</div>
+			</section>
+
+			{/* Testimonials Section */}
+			<section
+				id="testimonials"
+				className="testimonials-section"
+				ref={testimonialsRef}
+			>
+				<div className="testimonials-bg-pattern"></div>
+				<div className="container">
+					<motion.div
+						className="section-header"
+						initial="hidden"
+						animate={testimonialsInView ? "visible" : "hidden"}
+						variants={fadeInUp}
+					>
+						<h2>
+							What Our <span className="gradient-text">Users Say</span>
+						</h2>
+						<p>Trusted by schools across the country</p>
+					</motion.div>
+
+					<motion.div
+						className="testimonials-carousel"
+						initial={{ opacity: 0 }}
+						animate={testimonialsInView ? { opacity: 1 } : { opacity: 0 }}
+						transition={{ duration: 0.6 }}
+					>
+						<AnimatePresence mode="wait">
+							<motion.div
+								key={activeTestimonial}
+								initial={{ opacity: 0, x: 20 }}
+								animate={{ opacity: 1, x: 0 }}
+								exit={{ opacity: 0, x: -20 }}
+								transition={{ duration: 0.5 }}
+								className="testimonial"
+							>
+								<div className="testimonial-content">
+									<div className="quote">"</div>
+									<p>{testimonials[activeTestimonial].quote}</p>
+									<div className="testimonial-author">
+										<div className="author-image">
+											<img
+												src={testimonials[activeTestimonial].image}
+												alt={testimonials[activeTestimonial].name}
+											/>
+										</div>
+										<div className="author-info">
+											<h4>{testimonials[activeTestimonial].name}</h4>
+											<p>{testimonials[activeTestimonial].role}</p>
+										</div>
+									</div>
+								</div>
+							</motion.div>
+						</AnimatePresence>
+
+						<div className="testimonial-dots">
+							{testimonials.map((_, index) => (
+								<button
+									key={index}
+									className={`dot ${
+										index === activeTestimonial ? "active" : ""
+									}`}
+									onClick={() => setActiveTestimonial(index)}
+									aria-label={`Testimonial ${index + 1}`}
+								/>
+							))}
+						</div>
+					</motion.div>
+				</div>
+			</section>
+
+			{/* CTA Section */}
+			<section id="contact" className="cta-section" ref={ctaRef}>
+				<div className="cta-bg-pattern"></div>
+				<motion.div
+					className="container"
+					initial="hidden"
+					animate={ctaInView ? "visible" : "hidden"}
+					variants={fadeInUp}
+				>
+					<div className="cta-content">
+						<h2>
+							Ready to transform your{" "}
+							<span className="gradient-text-white">school management</span>?
+						</h2>
 						<p>
-							Budite među prvima koji će revolucionizirati upravljanje školom
+							Get in touch for a personalized demo and see how mojDnevnik can
+							work for your institution.
 						</p>
-					</div>
-
-					<div className="pricing-plans">
-						<div className="pricing-plan starter">
-							<div className="plan-badge">Najpopularniji</div>
-							<h3>Početni</h3>
-							<div className="plan-price">
-								<span className="currency">$</span>
-								<span className="amount">149</span>
-								<span className="period">/mjesečno</span>
-							</div>
-							<p className="plan-description">
-								Savršen za male škole do 200 učenika
-							</p>
-							<ul className="plan-features">
-								<li>Do 200 učeničkih računa</li>
-								<li>Do 30 nastavničkih računa</li>
-								<li>Osnovni izvještaji</li>
-								<li>Email podrška</li>
-								<li>Redovna ažuriranja</li>
-							</ul>
-							<a
-								href="e-dnevnik.alamelschools.ba"
-								className="btn-primary full-width"
-							>
-								Započni besplatnu probu
-							</a>
-							<p className="plan-note">
-								14-dnevna besplatna proba, bez kreditne kartice
-							</p>
-						</div>
-
-						<div className="pricing-plan professional">
-							<h3>Profesionalni</h3>
-							<div className="plan-price">
-								<span className="currency">$</span>
-								<span className="amount">299</span>
-								<span className="period">/mjesečno</span>
-							</div>
-							<p className="plan-description">
-								Idealan za srednje velike škole do 500 učenika
-							</p>
-							<ul className="plan-features">
-								<li>Do 500 učeničkih računa</li>
-								<li>Neograničen broj nastavničkih računa</li>
-								<li>Napredni izvještaji i analitika</li>
-								<li>Prioritetna email podrška</li>
-								<li>API pristup</li>
-								<li>Prilagođeni branding</li>
-							</ul>
-							<a
-								href="e-dnevnik.alamelschools.ba"
-								className="btn-primary full-width"
-							>
-								Započni besplatnu probu
-							</a>
-							<p className="plan-note">
-								14-dnevna besplatna proba, bez kreditne kartice
-							</p>
-						</div>
-
-						<div className="pricing-plan enterprise">
-							<h3>Enterprise</h3>
-							<div className="plan-price">
-								<span className="text">Prilagođene cijene</span>
-							</div>
-							<p className="plan-description">
-								Za velike obrazovne institucije sa specifičnim potrebama
-							</p>
-							<ul className="plan-features">
-								<li>Neograničen broj računa</li>
-								<li>Prilagođene integracije</li>
-								<li>Dedicirani account manager</li>
-								<li>24/7 prioritetna podrška</li>
-								<li>Opcija za implementaciju na vlastitom serveru</li>
-								<li>Razvoj prilagođenih funkcija</li>
-							</ul>
-							<a href="#contact" className="btn-outline full-width">
-								Kontaktirajte nas
-							</a>
-							<p className="plan-note">
-								Razgovarajmo o vašim specifičnim zahtjevima
-							</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* FAQ Section */}
-			<section id="faq" className="faq">
-				<div className="container">
-					<div className="section-header">
-						<span className="section-tag">PITANJA</span>
-						<h2>Često postavljana pitanja</h2>
-						<p>Sve što trebate znati o našoj platformi</p>
-					</div>
-
-					<div className="faq-grid">
-						<div className="faq-item">
-							<h3>Koliko dugo traje postavljanje?</h3>
-							<p>
-								Većina škola je spremna za rad u roku od 1-2 dana. Naš tim za
-								uvođenje pomoći će vam da uvezete postojeće podatke i pružiti
-								početnu obuku za vaše osoblje.
-							</p>
-						</div>
-						<div className="faq-item">
-							<h3>Jesu li moji podaci sigurni?</h3>
-							<p>
-								Apsolutno. Koristimo industrijsko-standardne enkripcije i
-								sigurnosne prakse. Svi podaci se sigurnosno kopiraju
-								svakodnevno, a mi se pridržavamo relevantnih propisa o
-								privatnosti obrazovnih podataka.
-							</p>
-						</div>
-						<div className="faq-item">
-							<h3>Mogu li uvesti postojeće podatke?</h3>
-							<p>
-								Da, pružamo alate za uvoz učeničkih zapisa, podataka o
-								nastavnicima i historijskih podataka iz Excel, CSV datoteka ili
-								direktno iz drugih popularnih sistema za upravljanje školama.
-							</p>
-						</div>
-						<div className="faq-item">
-							<h3>Nudite li obuku?</h3>
-							<p>
-								Da, svi planovi uključuju početne sesije obuke za administratore
-								i nastavnike. Također pružamo sveobuhvatnu dokumentaciju i video
-								tutorijale.
-							</p>
-						</div>
-						<div className="faq-item">
-							<h3>Mogu li prilagoditi funkcije za svoju školu?</h3>
-							<p>
-								Profesionalni plan uključuje neke opcije prilagođavanja, dok
-								Enterprise plan nudi potpunu prilagodbu uključujući razvoj
-								funkcija prilagođenih vašim potrebama.
-							</p>
-						</div>
-						<div className="faq-item">
-							<h3>Postoji li mobilna aplikacija?</h3>
-							<p>
-								Da, nudimo mobilne aplikacije za iOS i Android koje omogućavaju
-								nastavnicima, roditeljima i učenicima da pristupe platformi u
-								pokretu.
-							</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* Call to Action */}
-			<section className="cta">
-				<div className="container">
-					<h2>Spremni za transformaciju upravljanja vašom školom?</h2>
-					<p>Pridružite se digitalnoj obrazovnoj revoluciji danas</p>
-					<div className="cta-buttons">
-						<a href="e-dnevnik.alamelschools.ba" className="btn-primary">
-							Započni besplatnu probu
-						</a>
-						<a href="#contact" className="btn-secondary">
-							Zakaži demo
-						</a>
-					</div>
-				</div>
-			</section>
-
-			{/* Contact Section */}
-			<section id="contact" className="contact">
-				<div className="container">
-					<div className="section-header">
-						<span className="section-tag">KONTAKT</span>
-						<h2>Rado bismo čuli od vas</h2>
-						<p>Pitanja, komentari ili spremni za početak?</p>
-					</div>
-
-					<div className="contact-container">
-						<div className="contact-info">
-							<div className="info-item">
-								<div className="info-icon email-icon"></div>
-								<h3>Email</h3>
-								<p>info@ednevnik.ba</p>
-							</div>
-							<div className="info-item">
-								<div className="info-icon phone-icon"></div>
-								<h3>Nazovite nas</h3>
-								<p>+387 33 123 321</p>
-							</div>
-							<div className="info-item">
-								<div className="info-icon location-icon"></div>
-								<h3>Posjetite nas</h3>
-								<p>Sarajevo, Bosna i Hercegovina</p>
-							</div>
-							<div className="social-links">
-								<a href="#" className="social-link facebook"></a>
-								<a href="#" className="social-link twitter"></a>
-								<a href="#" className="social-link linkedin"></a>
-								<a href="#" className="social-link instagram"></a>
-							</div>
-						</div>
-						<div className="contact-form">
-							<form>
+						<form className="cta-form">
+							<div className="form-row">
 								<div className="form-group">
-									<label htmlFor="name">Ime</label>
-									<input type="text" id="name" placeholder="Vaše ime" />
+									<label>School Name</label>
+									<input type="text" placeholder="Enter school name" required />
 								</div>
 								<div className="form-group">
-									<label htmlFor="email">Email</label>
+									<label>Email Address</label>
 									<input
 										type="email"
-										id="email"
-										placeholder="Vaša email adresa"
+										placeholder="Enter email address"
+										required
+									/>
+								</div>
+							</div>
+							<div className="form-row">
+								<div className="form-group">
+									<label>Contact Person</label>
+									<input
+										type="text"
+										placeholder="Enter contact name"
+										required
 									/>
 								</div>
 								<div className="form-group">
-									<label htmlFor="school">Ime škole</label>
-									<input type="text" id="school" placeholder="Ime vaše škole" />
+									<label>Phone Number</label>
+									<input type="tel" placeholder="Enter phone number" />
 								</div>
-								<div className="form-group">
-									<label htmlFor="message">Poruka</label>
-									<textarea
-										id="message"
-										placeholder="Kako vam možemo pomoći?"
-									></textarea>
-								</div>
-								<button type="submit" className="btn-primary full-width">
-									Pošalji poruku
-								</button>
-							</form>
-						</div>
+							</div>
+							<button type="submit" className="btn btn-primary">
+								Request Demo{" "}
+								<span className="btn-icon">
+									<FaChevronRight />
+								</span>
+							</button>
+						</form>
 					</div>
-				</div>
+				</motion.div>
 			</section>
 
 			{/* Footer */}
 			<footer className="footer">
+				<div className="footer-wave">
+					<svg
+						data-name="Layer 1"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 1200 120"
+						preserveAspectRatio="none"
+					>
+						<path
+							d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+							className="shape-fill"
+						></path>
+					</svg>
+				</div>
 				<div className="container">
-					<div className="footer-top">
-						<div className="footer-brand">
-							<h2>eDnevnik</h2>
-							<p>Kompletno rješenje za upravljanje školom</p>
+					<div className="footer-content">
+						<div className="footer-logo">
+							<h2>
+								moj<span>Dnevnik</span>
+							</h2>
+							<p>The complete school management solution</p>
+							<div className="social-links">
+								<a href="#" aria-label="Facebook">
+									<FaFacebook />
+								</a>
+								<a href="#" aria-label="Twitter">
+									<FaTwitter />
+								</a>
+								<a href="#" aria-label="LinkedIn">
+									<FaLinkedin />
+								</a>
+								<a href="#" aria-label="Instagram">
+									<FaInstagram />
+								</a>
+							</div>
 						</div>
 						<div className="footer-links">
 							<div className="link-group">
-								<h3>Proizvod</h3>
+								<h4>Product</h4>
 								<ul>
 									<li>
-										<a href="#features">Funkcije</a>
+										<a href="#features">Features</a>
 									</li>
 									<li>
-										<a href="#roles">Za korisnike</a>
+										<a href="#roles">User Roles</a>
 									</li>
 									<li>
-										<a href="#pricing">Cijene</a>
+										<a href="#benefits">Benefits</a>
 									</li>
 									<li>
-										<a href="#faq">Česta pitanja</a>
+										<a href="#pricing">Pricing</a>
 									</li>
 								</ul>
 							</div>
 							<div className="link-group">
-								<h3>Resursi</h3>
+								<h4>Resources</h4>
 								<ul>
 									<li>
-										<a href="#">Blog</a>
+										<a href="#faq">FAQ</a>
 									</li>
 									<li>
-										<a href="#">Dokumentacija</a>
+										<a href="#blog">Blog</a>
 									</li>
 									<li>
-										<a href="#">Podrška</a>
+										<a href="#support">Support</a>
+									</li>
+									<li>
+										<a href="#documentation">Documentation</a>
 									</li>
 								</ul>
 							</div>
 							<div className="link-group">
-								<h3>Kompanija</h3>
+								<h4>Company</h4>
 								<ul>
 									<li>
-										<a href="#">O nama</a>
+										<a href="#about">About Us</a>
 									</li>
 									<li>
-										<a href="#contact">Kontakt</a>
+										<a href="#contact">Contact</a>
 									</li>
 									<li>
-										<a href="#">Karijere</a>
+										<a href="#careers">Careers</a>
+									</li>
+									<li>
+										<a href="#legal">Legal</a>
 									</li>
 								</ul>
+							</div>
+						</div>
+						<div className="footer-contact">
+							<h4>Contact Us</h4>
+							<p>info@mojdnevnik.com</p>
+							<p>+123 456 7890</p>
+							<div className="newsletter">
+								<h4>Stay Updated</h4>
+								<div className="newsletter-form">
+									<input type="email" placeholder="Enter your email" />
+									<button type="submit">
+										<FaChevronRight />
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div className="footer-bottom">
-						<p>&copy; 2025 Emir Kugić. Sva prava pridržana.</p>
-						<div className="footer-legal">
-							<a href="#">Politika privatnosti</a>
-							<a href="#">Uslovi korištenja</a>
+						<p>
+							&copy; {new Date().getFullYear()} mojDnevnik. All rights reserved.
+						</p>
+						<div className="legal-links">
+							<a href="#privacy">Privacy Policy</a>
+							<a href="#terms">Terms of Service</a>
 						</div>
 					</div>
 				</div>
