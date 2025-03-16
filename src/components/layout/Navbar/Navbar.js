@@ -33,16 +33,6 @@ const Navbar = () => {
 				>
 					<ul>
 						<li>
-							<Link to="/features" onClick={() => setIsMenuOpen(false)}>
-								Features
-							</Link>
-						</li>
-						<li>
-							<Link to="/for-schools" onClick={() => setIsMenuOpen(false)}>
-								For Schools
-							</Link>
-						</li>
-						<li>
 							<Link to="/gallery" onClick={() => setIsMenuOpen(false)}>
 								Gallery
 							</Link>
