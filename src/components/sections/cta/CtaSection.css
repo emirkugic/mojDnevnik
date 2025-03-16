@@ -9,6 +9,7 @@
 	position: relative;
 	overflow: hidden;
 	padding: var(--md-spacing-3xl) 0;
+	padding-bottom: 120px;
 }
 
 .md-cta-section__bg-pattern {
