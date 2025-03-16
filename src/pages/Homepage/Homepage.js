@@ -16,30 +16,30 @@ const Homepage = () => {
 			<nav className="navbar">
 				<div className="container">
 					<div className="navbar-brand">
-						<h1>e-Dnevnik</h1>
+						<h1>eDnevnik</h1>
 					</div>
 					<div className={`navbar-menu ${mobileMenuOpen ? "active" : ""}`}>
 						<ul>
 							<li>
-								<a href="#features">Features</a>
+								<a href="#features">Funkcije</a>
 							</li>
 							<li>
-								<a href="#roles">For Users</a>
+								<a href="#roles">Za korisnike</a>
 							</li>
 							<li>
-								<a href="#pricing">Pricing</a>
+								<a href="#pricing">Cijene</a>
 							</li>
 							<li>
-								<a href="#faq">FAQ</a>
+								<a href="#faq">Česta pitanja</a>
 							</li>
 							<li>
-								<a href="#contact">Contact</a>
+								<a href="#contact">Kontakt</a>
 							</li>
 						</ul>
 					</div>
 					<div className="navbar-cta">
 						<a href="e-dnevnik.alamelschools.ba" className="btn-secondary">
-							Try Demo
+							Isprobaj Demo
 						</a>
 					</div>
 					<div className="mobile-toggle" onClick={toggleMobileMenu}>
@@ -54,26 +54,26 @@ const Homepage = () => {
 			<section className="hero">
 				<div className="container">
 					<div className="hero-content">
-						<h1>Modernize Your School Management</h1>
+						<h1>Modernizirajte upravljanje vašom školom</h1>
 						<p>
-							A complete digital solution to streamline attendance tracking,
-							grade management, and parent-teacher communication for
-							forward-thinking schools.
+							Kompletno digitalno rješenje za pojednostavljenje praćenja
+							prisustva, upravljanja ocjenama i komunikacije između roditelja i
+							nastavnika za škole koje gledaju u budućnost.
 						</p>
 						<div className="hero-buttons">
 							<a href="e-dnevnik.alamelschools.ba" className="btn-primary">
-								Start Free Trial
+								Započni besplatnu probu
 							</a>
 							<a href="#demo" className="btn-video">
 								<span className="play-icon">▶</span>
-								Watch Demo
+								Pogledaj Demo
 							</a>
 						</div>
 					</div>
 					<div className="hero-image">
 						<img
 							src="/image1.png"
-							alt="e-Dnevnik Dashboard"
+							alt="e-Dnevnik Kontrolna ploča"
 							className="main-screenshot"
 						/>
 						<div className="floating-element fe-1"></div>
@@ -87,45 +87,45 @@ const Homepage = () => {
 			<section id="features" className="features">
 				<div className="container">
 					<div className="section-header">
-						<span className="section-tag">CORE FEATURES</span>
-						<h2>Everything you need to run your school efficiently</h2>
+						<span className="section-tag">GLAVNE FUNKCIJE</span>
+						<h2>Sve što vam je potrebno za efikasno vođenje škole</h2>
 						<p>
-							Our platform combines all essential tools in one intuitive
-							interface
+							Naša platforma kombinuje sve osnovne alate u jednom intuitivnom
+							interfejsu
 						</p>
 					</div>
 
 					<div className="feature-cards">
 						<div className="feature-card">
 							<div className="feature-icon attendance-icon"></div>
-							<h3>Attendance Tracking</h3>
+							<h3>Praćenje prisustva</h3>
 							<p>
-								Track and report student attendance with one click. Generate
-								insightful reports and identify patterns.
+								Pratite i izvještavajte o prisustvu učenika jednim klikom.
+								Generišite korisne izvještaje i identifikujte obrasce.
 							</p>
 						</div>
 						<div className="feature-card">
 							<div className="feature-icon grade-icon"></div>
-							<h3>Grade Management</h3>
+							<h3>Upravljanje ocjenama</h3>
 							<p>
-								Create custom grading criteria and seamlessly manage student
-								assessments across all subjects.
+								Kreirajte prilagođene kriterije ocjenjivanja i jednostavno
+								upravljajte ocjenama učenika iz svih predmeta.
 							</p>
 						</div>
 						<div className="feature-card">
 							<div className="feature-icon parent-icon"></div>
-							<h3>Parent Communication</h3>
+							<h3>Komunikacija s roditeljima</h3>
 							<p>
-								Keep parents informed and engaged with real-time updates on
-								grades, attendance, and behavior.
+								Držite roditelje informisanim i uključenim s ažuriranjima u
+								realnom vremenu o ocjenama, prisustvu i ponašanju.
 							</p>
 						</div>
 						<div className="feature-card">
 							<div className="feature-icon schedule-icon"></div>
-							<h3>Class Scheduling</h3>
+							<h3>Raspored časova</h3>
 							<p>
-								Easily create and manage class schedules, avoiding conflicts and
-								optimizing resource allocation.
+								Jednostavno kreirajte i upravljajte rasporedom časova,
+								izbjegavajući konflikte i optimizirajući raspodjelu resursa.
 							</p>
 						</div>
 					</div>
@@ -136,35 +136,35 @@ const Homepage = () => {
 			<section className="showcase">
 				<div className="container">
 					<div className="section-header">
-						<span className="section-tag">THE INTERFACE</span>
-						<h2>Beautiful, intuitive, and easy to use</h2>
-						<p>Designed with teachers and administrators in mind</p>
+						<span className="section-tag">INTERFEJS</span>
+						<h2>Lijep, intuitivan i jednostavan za korištenje</h2>
+						<p>Dizajniran s nastavnicima i administratorima na umu</p>
 					</div>
 
 					<div className="showcase-grid">
 						<div className="showcase-item main">
-							<img src="/image2.png" alt="Dashboard Overview" />
+							<img src="/image2.png" alt="Pregled kontrolne ploče" />
 							<div className="showcase-caption">
-								<h3>Comprehensive Dashboard</h3>
-								<p>Get a quick overview of everything important in one place</p>
+								<h3>Sveobuhvatna kontrolna ploča</h3>
+								<p>Dobijte brzi pregled svega važnog na jednom mjestu</p>
 							</div>
 						</div>
 						<div className="showcase-item">
-							<img src="/image3.png" alt="Attendance Module" />
+							<img src="/image3.png" alt="Modul za prisustvo" />
 							<div className="showcase-caption">
-								<p>Attendance Module</p>
+								<p>Modul za prisustvo</p>
 							</div>
 						</div>
 						<div className="showcase-item">
-							<img src="/image4.png" alt="Grade Entry Screen" />
+							<img src="/image4.png" alt="Ekran za unos ocjena" />
 							<div className="showcase-caption">
-								<p>Grade Entry Interface</p>
+								<p>Interfejs za unos ocjena</p>
 							</div>
 						</div>
 						<div className="showcase-item">
-							<img src="/image5.png" alt="Parent Portal" />
+							<img src="/image5.png" alt="Portal za roditelje" />
 							<div className="showcase-caption">
-								<p>Parent Communication Portal</p>
+								<p>Portal za komunikaciju s roditeljima</p>
 							</div>
 						</div>
 					</div>
@@ -175,9 +175,9 @@ const Homepage = () => {
 			<section id="roles" className="roles">
 				<div className="container">
 					<div className="section-header">
-						<span className="section-tag">FOR EVERYONE</span>
-						<h2>Tailored for all school stakeholders</h2>
-						<p>Different views and permissions for each user role</p>
+						<span className="section-tag">ZA SVAKOGA</span>
+						<h2>Prilagođeno za sve učesnike u školi</h2>
+						<p>Različiti prikazi i dozvole za svaku korisničku ulogu</p>
 					</div>
 
 					<div className="tabs-container">
@@ -188,7 +188,7 @@ const Homepage = () => {
 								}`}
 								onClick={() => setActiveTab("teachers")}
 							>
-								For Teachers
+								Za nastavnike
 							</button>
 							<button
 								className={`tab-button ${
@@ -196,7 +196,7 @@ const Homepage = () => {
 								}`}
 								onClick={() => setActiveTab("admin")}
 							>
-								For Administrators
+								Za administratore
 							</button>
 							<button
 								className={`tab-button ${
@@ -204,7 +204,7 @@ const Homepage = () => {
 								}`}
 								onClick={() => setActiveTab("classTeacher")}
 							>
-								For Class Teachers
+								Za razrednike
 							</button>
 							<button
 								className={`tab-button ${
@@ -212,7 +212,7 @@ const Homepage = () => {
 								}`}
 								onClick={() => setActiveTab("parents")}
 							>
-								For Parents
+								Za roditelje
 							</button>
 							<button
 								className={`tab-button ${
@@ -220,7 +220,7 @@ const Homepage = () => {
 								}`}
 								onClick={() => setActiveTab("students")}
 							>
-								For Students
+								Za učenike
 							</button>
 						</div>
 
@@ -228,23 +228,23 @@ const Homepage = () => {
 							{activeTab === "teachers" && (
 								<div className="tab-content">
 									<div className="tab-info">
-										<h3>Empower Your Teaching</h3>
+										<h3>Osnažite svoje podučavanje</h3>
 										<ul>
-											<li>Take attendance in seconds</li>
-											<li>Enter and manage grades efficiently</li>
-											<li>Communicate directly with parents</li>
-											<li>Create and share learning materials</li>
-											<li>Track student progress over time</li>
+											<li>Evidentirajte prisustvo u nekoliko sekundi</li>
+											<li>Unosite i upravljajte ocjenama efikasno</li>
+											<li>Komunicirajte direktno s roditeljima</li>
+											<li>Kreirajte i dijelite nastavne materijale</li>
+											<li>Pratite napredak učenika tokom vremena</li>
 										</ul>
 										<a
 											href="e-dnevnik.alamelschools.ba"
 											className="btn-outline"
 										>
-											See Teacher Demo
+											Pogledaj demo za nastavnike
 										</a>
 									</div>
 									<div className="tab-image">
-										<img src="/image3.png" alt="Teacher Interface" />
+										<img src="/image3.png" alt="Interfejs za nastavnike" />
 									</div>
 								</div>
 							)}
@@ -252,23 +252,23 @@ const Homepage = () => {
 							{activeTab === "admin" && (
 								<div className="tab-content">
 									<div className="tab-info">
-										<h3>Streamline Administration</h3>
+										<h3>Pojednostavite administraciju</h3>
 										<ul>
-											<li>Manage all users and assign roles</li>
-											<li>Track school-wide metrics in real-time</li>
-											<li>Generate comprehensive reports</li>
-											<li>Customize system to your school's needs</li>
-											<li>Monitor teacher and student performance</li>
+											<li>Upravljajte svim korisnicima i dodjeljujte uloge</li>
+											<li>Pratite metrike cijele škole u realnom vremenu</li>
+											<li>Generišite sveobuhvatne izvještaje</li>
+											<li>Prilagodite sistem potrebama vaše škole</li>
+											<li>Nadzirite rad nastavnika i učenika</li>
 										</ul>
 										<a
 											href="e-dnevnik.alamelschools.ba"
 											className="btn-outline"
 										>
-											See Admin Demo
+											Pogledaj demo za administratore
 										</a>
 									</div>
 									<div className="tab-image">
-										<img src="/image2.png" alt="Administrator Interface" />
+										<img src="/image2.png" alt="Interfejs za administratore" />
 									</div>
 								</div>
 							)}
@@ -276,23 +276,23 @@ const Homepage = () => {
 							{activeTab === "classTeacher" && (
 								<div className="tab-content">
 									<div className="tab-info">
-										<h3>Manage Your Class Efficiently</h3>
+										<h3>Efikasno upravljajte svojim razredom</h3>
 										<ul>
-											<li>Get comprehensive view of your class</li>
-											<li>Track attendance and performance patterns</li>
-											<li>Communicate with parents effortlessly</li>
-											<li>Create and share class announcements</li>
-											<li>Manage class events and activities</li>
+											<li>Dobijte sveobuhvatan pregled svog razreda</li>
+											<li>Pratite obrasce prisustva i uspjeha</li>
+											<li>Komunicirajte s roditeljima bez napora</li>
+											<li>Kreirajte i dijelite obavijesti za razred</li>
+											<li>Upravljajte događajima i aktivnostima razreda</li>
 										</ul>
 										<a
 											href="e-dnevnik.alamelschools.ba"
 											className="btn-outline"
 										>
-											See Class Teacher Demo
+											Pogledaj demo za razrednike
 										</a>
 									</div>
 									<div className="tab-image">
-										<img src="/image4.png" alt="Class Teacher Interface" />
+										<img src="/image4.png" alt="Interfejs za razrednike" />
 									</div>
 								</div>
 							)}
@@ -300,23 +300,23 @@ const Homepage = () => {
 							{activeTab === "parents" && (
 								<div className="tab-content">
 									<div className="tab-info">
-										<h3>Stay Connected to Your Child's Education</h3>
+										<h3>Ostanite povezani s obrazovanjem vašeg djeteta</h3>
 										<ul>
-											<li>View real-time grades and attendance</li>
-											<li>Communicate directly with teachers</li>
-											<li>Receive important notifications</li>
-											<li>Track homework and assignments</li>
-											<li>Monitor overall academic progress</li>
+											<li>Pogledajte ocjene i prisustvo u realnom vremenu</li>
+											<li>Komunicirajte direktno s nastavnicima</li>
+											<li>Primajte važne obavijesti</li>
+											<li>Pratite domaće zadaće i zadatke</li>
+											<li>Pratite ukupni akademski napredak</li>
 										</ul>
 										<a
 											href="e-dnevnik.alamelschools.ba"
 											className="btn-outline"
 										>
-											See Parent Demo
+											Pogledaj demo za roditelje
 										</a>
 									</div>
 									<div className="tab-image">
-										<img src="/image5.png" alt="Parent Interface" />
+										<img src="/image5.png" alt="Interfejs za roditelje" />
 									</div>
 								</div>
 							)}
@@ -324,23 +324,23 @@ const Homepage = () => {
 							{activeTab === "students" && (
 								<div className="tab-content">
 									<div className="tab-info">
-										<h3>Take Control of Your Learning</h3>
+										<h3>Preuzmite kontrolu nad svojim učenjem</h3>
 										<ul>
-											<li>Check grades and attendance</li>
-											<li>Access homework and assignments</li>
-											<li>View teacher feedback</li>
-											<li>Track your academic progress</li>
-											<li>Stay updated on school events</li>
+											<li>Provjerite ocjene i prisustvo</li>
+											<li>Pristupite domaćim zadaćama i zadacima</li>
+											<li>Pogledajte povratne informacije nastavnika</li>
+											<li>Pratite svoj akademski napredak</li>
+											<li>Budite u toku sa školskim događajima</li>
 										</ul>
 										<a
 											href="e-dnevnik.alamelschools.ba"
 											className="btn-outline"
 										>
-											See Student Demo
+											Pogledaj demo za učenike
 										</a>
 									</div>
 									<div className="tab-image">
-										<img src="/image1.png" alt="Student Interface" />
+										<img src="/image1.png" alt="Interfejs za učenike" />
 									</div>
 								</div>
 							)}
@@ -353,91 +353,93 @@ const Homepage = () => {
 			<section id="pricing" className="pricing">
 				<div className="container">
 					<div className="section-header">
-						<span className="section-tag">LAUNCH OFFER</span>
-						<h2>Early adopter benefits</h2>
-						<p>Be among the first to revolutionize your school management</p>
+						<span className="section-tag">PONUDA ZA LANSIRANJE</span>
+						<h2>Pogodnosti za rane korisnike</h2>
+						<p>
+							Budite među prvima koji će revolucionizirati upravljanje školom
+						</p>
 					</div>
 
 					<div className="pricing-plans">
 						<div className="pricing-plan starter">
-							<div className="plan-badge">Most Popular</div>
-							<h3>Starter</h3>
+							<div className="plan-badge">Najpopularniji</div>
+							<h3>Početni</h3>
 							<div className="plan-price">
 								<span className="currency">$</span>
 								<span className="amount">149</span>
-								<span className="period">/month</span>
+								<span className="period">/mjesečno</span>
 							</div>
 							<p className="plan-description">
-								Perfect for small schools up to 200 students
+								Savršen za male škole do 200 učenika
 							</p>
 							<ul className="plan-features">
-								<li>Up to 200 student accounts</li>
-								<li>Up to 30 teacher accounts</li>
-								<li>Basic reporting</li>
-								<li>Email support</li>
-								<li>Regular updates</li>
+								<li>Do 200 učeničkih računa</li>
+								<li>Do 30 nastavničkih računa</li>
+								<li>Osnovni izvještaji</li>
+								<li>Email podrška</li>
+								<li>Redovna ažuriranja</li>
 							</ul>
 							<a
 								href="e-dnevnik.alamelschools.ba"
 								className="btn-primary full-width"
 							>
-								Start Free Trial
+								Započni besplatnu probu
 							</a>
 							<p className="plan-note">
-								14-day free trial, no credit card required
+								14-dnevna besplatna proba, bez kreditne kartice
 							</p>
 						</div>
 
 						<div className="pricing-plan professional">
-							<h3>Professional</h3>
+							<h3>Profesionalni</h3>
 							<div className="plan-price">
 								<span className="currency">$</span>
 								<span className="amount">299</span>
-								<span className="period">/month</span>
+								<span className="period">/mjesečno</span>
 							</div>
 							<p className="plan-description">
-								Ideal for medium-sized schools up to 500 students
+								Idealan za srednje velike škole do 500 učenika
 							</p>
 							<ul className="plan-features">
-								<li>Up to 500 student accounts</li>
-								<li>Unlimited teacher accounts</li>
-								<li>Advanced reporting & analytics</li>
-								<li>Priority email support</li>
-								<li>API access</li>
-								<li>Custom branding</li>
+								<li>Do 500 učeničkih računa</li>
+								<li>Neograničen broj nastavničkih računa</li>
+								<li>Napredni izvještaji i analitika</li>
+								<li>Prioritetna email podrška</li>
+								<li>API pristup</li>
+								<li>Prilagođeni branding</li>
 							</ul>
 							<a
 								href="e-dnevnik.alamelschools.ba"
 								className="btn-primary full-width"
 							>
-								Start Free Trial
+								Započni besplatnu probu
 							</a>
 							<p className="plan-note">
-								14-day free trial, no credit card required
+								14-dnevna besplatna proba, bez kreditne kartice
 							</p>
 						</div>
 
 						<div className="pricing-plan enterprise">
 							<h3>Enterprise</h3>
 							<div className="plan-price">
-								<span className="text">Custom Pricing</span>
+								<span className="text">Prilagođene cijene</span>
 							</div>
 							<p className="plan-description">
-								For large educational institutions with specific needs
+								Za velike obrazovne institucije sa specifičnim potrebama
 							</p>
 							<ul className="plan-features">
-								<li>Unlimited accounts</li>
-								<li>Custom integrations</li>
-								<li>Dedicated account manager</li>
-								<li>24/7 priority support</li>
-								<li>On-premise deployment option</li>
-								<li>Custom feature development</li>
+								<li>Neograničen broj računa</li>
+								<li>Prilagođene integracije</li>
+								<li>Dedicirani account manager</li>
+								<li>24/7 prioritetna podrška</li>
+								<li>Opcija za implementaciju na vlastitom serveru</li>
+								<li>Razvoj prilagođenih funkcija</li>
 							</ul>
 							<a href="#contact" className="btn-outline full-width">
-								Contact Us
+								Kontaktirajte nas
 							</a>
 							<p className="plan-note">
-								Let's discuss your specific requirements
+								Razgovarajmo o vašim specifičnim zahtjevima
 							</p>
 						</div>
 					</div>
@@ -448,58 +450,59 @@ const Homepage = () => {
 			<section id="faq" className="faq">
 				<div className="container">
 					<div className="section-header">
-						<span className="section-tag">QUESTIONS</span>
-						<h2>Frequently Asked Questions</h2>
-						<p>Everything you need to know about our platform</p>
+						<span className="section-tag">PITANJA</span>
+						<h2>Često postavljana pitanja</h2>
+						<p>Sve što trebate znati o našoj platformi</p>
 					</div>
 
 					<div className="faq-grid">
 						<div className="faq-item">
-							<h3>How long does it take to set up?</h3>
+							<h3>Koliko dugo traje postavljanje?</h3>
 							<p>
-								Most schools are up and running within 1-2 days. Our onboarding
-								team will help you import your existing data and provide initial
-								training for your staff.
+								Većina škola je spremna za rad u roku od 1-2 dana. Naš tim za
+								uvođenje pomoći će vam da uvezete postojeće podatke i pružiti
+								početnu obuku za vaše osoblje.
 							</p>
 						</div>
 						<div className="faq-item">
-							<h3>Is my data secure?</h3>
+							<h3>Jesu li moji podaci sigurni?</h3>
 							<p>
-								Absolutely. We use industry-standard encryption and security
-								practices. All data is backed up daily, and we comply with
-								relevant educational data privacy regulations.
+								Apsolutno. Koristimo industrijsko-standardne enkripcije i
+								sigurnosne prakse. Svi podaci se sigurnosno kopiraju
+								svakodnevno, a mi se pridržavamo relevantnih propisa o
+								privatnosti obrazovnih podataka.
 							</p>
 						</div>
 						<div className="faq-item">
-							<h3>Can I import existing data?</h3>
+							<h3>Mogu li uvesti postojeće podatke?</h3>
 							<p>
-								Yes, we provide tools to import student records, teacher
-								information, and historical data from Excel, CSV files, or
-								directly from other popular school management systems.
+								Da, pružamo alate za uvoz učeničkih zapisa, podataka o
+								nastavnicima i historijskih podataka iz Excel, CSV datoteka ili
+								direktno iz drugih popularnih sistema za upravljanje školama.
 							</p>
 						</div>
 						<div className="faq-item">
-							<h3>Do you offer training?</h3>
+							<h3>Nudite li obuku?</h3>
 							<p>
-								Yes, all plans include initial training sessions for
-								administrators and teachers. We also provide comprehensive
-								documentation and video tutorials.
+								Da, svi planovi uključuju početne sesije obuke za administratore
+								i nastavnike. Također pružamo sveobuhvatnu dokumentaciju i video
+								tutorijale.
 							</p>
 						</div>
 						<div className="faq-item">
-							<h3>Can I customize features for my school?</h3>
+							<h3>Mogu li prilagoditi funkcije za svoju školu?</h3>
 							<p>
-								The Professional plan includes some customization options, while
-								the Enterprise plan offers full customization including feature
-								development tailored to your needs.
+								Profesionalni plan uključuje neke opcije prilagođavanja, dok
+								Enterprise plan nudi potpunu prilagodbu uključujući razvoj
+								funkcija prilagođenih vašim potrebama.
 							</p>
 						</div>
 						<div className="faq-item">
-							<h3>Is there a mobile app?</h3>
+							<h3>Postoji li mobilna aplikacija?</h3>
 							<p>
-								Yes, we offer mobile apps for iOS and Android that allow
-								teachers, parents, and students to access the platform on the
-								go.
+								Da, nudimo mobilne aplikacije za iOS i Android koje omogućavaju
+								nastavnicima, roditeljima i učenicima da pristupe platformi u
+								pokretu.
 							</p>
 						</div>
 					</div>
@@ -509,14 +512,14 @@ const Homepage = () => {
 			{/* Call to Action */}
 			<section className="cta">
 				<div className="container">
-					<h2>Ready to transform your school management?</h2>
-					<p>Join the digital education revolution today</p>
+					<h2>Spremni za transformaciju upravljanja vašom školom?</h2>
+					<p>Pridružite se digitalnoj obrazovnoj revoluciji danas</p>
 					<div className="cta-buttons">
 						<a href="e-dnevnik.alamelschools.ba" className="btn-primary">
-							Start Free Trial
+							Započni besplatnu probu
 						</a>
 						<a href="#contact" className="btn-secondary">
-							Schedule Demo
+							Zakaži demo
 						</a>
 					</div>
 				</div>
@@ -526,27 +529,27 @@ const Homepage = () => {
 			<section id="contact" className="contact">
 				<div className="container">
 					<div className="section-header">
-						<span className="section-tag">GET IN TOUCH</span>
-						<h2>We'd love to hear from you</h2>
-						<p>Questions, comments, or ready to get started?</p>
+						<span className="section-tag">KONTAKT</span>
+						<h2>Rado bismo čuli od vas</h2>
+						<p>Pitanja, komentari ili spremni za početak?</p>
 					</div>
 
 					<div className="contact-container">
 						<div className="contact-info">
 							<div className="info-item">
 								<div className="info-icon email-icon"></div>
-								<h3>Email Us</h3>
-								<p>info@alamelschools.ba</p>
+								<h3>Email</h3>
+								<p>info@ednevnik.ba</p>
 							</div>
 							<div className="info-item">
 								<div className="info-icon phone-icon"></div>
-								<h3>Call Us</h3>
-								<p>+387 33 123 456</p>
+								<h3>Nazovite nas</h3>
+								<p>+387 33 123 321</p>
 							</div>
 							<div className="info-item">
 								<div className="info-icon location-icon"></div>
-								<h3>Visit Us</h3>
-								<p>Sarajevo, Bosnia and Herzegovina</p>
+								<h3>Posjetite nas</h3>
+								<p>Sarajevo, Bosna i Hercegovina</p>
 							</div>
 							<div className="social-links">
 								<a href="#" className="social-link facebook"></a>
@@ -558,34 +561,30 @@ const Homepage = () => {
 						<div className="contact-form">
 							<form>
 								<div className="form-group">
-									<label htmlFor="name">Name</label>
-									<input type="text" id="name" placeholder="Your name" />
+									<label htmlFor="name">Ime</label>
+									<input type="text" id="name" placeholder="Vaše ime" />
 								</div>
 								<div className="form-group">
 									<label htmlFor="email">Email</label>
 									<input
 										type="email"
 										id="email"
-										placeholder="Your email address"
+										placeholder="Vaša email adresa"
 									/>
 								</div>
 								<div className="form-group">
-									<label htmlFor="school">School Name</label>
-									<input
-										type="text"
-										id="school"
-										placeholder="Your school name"
-									/>
+									<label htmlFor="school">Ime škole</label>
+									<input type="text" id="school" placeholder="Ime vaše škole" />
 								</div>
 								<div className="form-group">
-									<label htmlFor="message">Message</label>
+									<label htmlFor="message">Poruka</label>
 									<textarea
 										id="message"
-										placeholder="How can we help you?"
+										placeholder="Kako vam možemo pomoći?"
 									></textarea>
 								</div>
 								<button type="submit" className="btn-primary full-width">
-									Send Message
+									Pošalji poruku
 								</button>
 							</form>
 						</div>
@@ -598,62 +597,62 @@ const Homepage = () => {
 				<div className="container">
 					<div className="footer-top">
 						<div className="footer-brand">
-							<h2>e-Dnevnik</h2>
-							<p>The complete school management solution</p>
+							<h2>eDnevnik</h2>
+							<p>Kompletno rješenje za upravljanje školom</p>
 						</div>
 						<div className="footer-links">
 							<div className="link-group">
-								<h3>Product</h3>
+								<h3>Proizvod</h3>
 								<ul>
 									<li>
-										<a href="#features">Features</a>
+										<a href="#features">Funkcije</a>
 									</li>
 									<li>
-										<a href="#roles">For Users</a>
+										<a href="#roles">Za korisnike</a>
 									</li>
 									<li>
-										<a href="#pricing">Pricing</a>
+										<a href="#pricing">Cijene</a>
 									</li>
 									<li>
-										<a href="#faq">FAQ</a>
+										<a href="#faq">Česta pitanja</a>
 									</li>
 								</ul>
 							</div>
 							<div className="link-group">
-								<h3>Resources</h3>
+								<h3>Resursi</h3>
 								<ul>
 									<li>
 										<a href="#">Blog</a>
 									</li>
 									<li>
-										<a href="#">Documentation</a>
+										<a href="#">Dokumentacija</a>
 									</li>
 									<li>
-										<a href="#">Support</a>
+										<a href="#">Podrška</a>
 									</li>
 								</ul>
 							</div>
 							<div className="link-group">
-								<h3>Company</h3>
+								<h3>Kompanija</h3>
 								<ul>
 									<li>
-										<a href="#">About Us</a>
+										<a href="#">O nama</a>
 									</li>
 									<li>
-										<a href="#contact">Contact</a>
+										<a href="#contact">Kontakt</a>
 									</li>
 									<li>
-										<a href="#">Careers</a>
+										<a href="#">Karijere</a>
 									</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 					<div className="footer-bottom">
-						<p>&copy; 2025 Alamel Schools. All rights reserved.</p>
+						<p>&copy; 2025 Emir Kugić. Sva prava pridržana.</p>
 						<div className="footer-legal">
-							<a href="#">Privacy Policy</a>
-							<a href="#">Terms of Service</a>
+							<a href="#">Politika privatnosti</a>
+							<a href="#">Uslovi korištenja</a>
 						</div>
 					</div>
 				</div>
