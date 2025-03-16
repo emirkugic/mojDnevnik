@@ -1,0 +1,125 @@
+.md-benefits-section {
+	background-color: var(--md-bg-white);
+	position: relative;
+	padding: var(--md-spacing-3xl) 0;
+}
+
+.md-benefits-section .md-container {
+	display: flex;
+	align-items: center;
+	gap: 70px;
+}
+
+.md-benefits-section__content {
+	flex: 1;
+}
+
+.md-benefits-section__list {
+	margin-top: 50px;
+}
+
+.md-benefits-section__item {
+	display: flex;
+	gap: 25px;
+	margin-bottom: 40px;
+	position: relative;
+}
+
+.md-benefits-section__item:last-child {
+	margin-bottom: 0;
+}
+
+.md-benefits-section__icon {
+	font-size: 2.5rem;
+	color: var(--md-primary-color);
+	flex-shrink: 0;
+	position: relative;
+}
+
+.md-benefits-section__icon::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background: radial-gradient(
+		circle,
+		rgba(67, 97, 238, 0.1) 0%,
+		rgba(67, 97, 238, 0) 70%
+	);
+	z-index: -1;
+}
+
+.md-benefits-section__text h3 {
+	font-size: 1.5rem;
+	margin-bottom: 0.7em;
+	color: var(--md-text-dark);
+}
+
+.md-benefits-section__text p {
+	color: var(--md-text-light);
+	font-size: 1.125rem;
+	line-height: 1.7;
+}
+
+.md-benefits-section__image {
+	flex: 1;
+}
+
+.md-benefits-section__image-card {
+	position: relative;
+	border-radius: var(--md-border-radius-lg);
+	overflow: hidden;
+	box-shadow: var(--md-shadow-xl);
+	transition: var(--md-transition);
+}
+
+.md-benefits-section__image-card:hover {
+	transform: translateY(-10px) rotate(-1deg);
+}
+
+.md-benefits-section__image-card img {
+	display: block;
+	border-radius: var(--md-border-radius-lg);
+	width: 100%;
+	transition: var(--md-transition);
+}
+
+.md-benefits-section__image-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(
+		circle at bottom right,
+		rgba(247, 37, 133, 0.1),
+		transparent 70%
+	);
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+	.md-benefits-section .md-container {
+		flex-direction: column-reverse;
+	}
+
+	.md-benefits-section__content .md-section-header {
+		text-align: center;
+	}
+}
+
+@media (max-width: 768px) {
+	.md-benefits-section__item {
+		flex-direction: column;
+		gap: 15px;
+		text-align: center;
+	}
+
+	.md-benefits-section__icon {
+		margin: 0 auto 10px;
+	}
+}

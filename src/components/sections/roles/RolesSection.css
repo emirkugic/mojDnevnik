@@ -1,0 +1,131 @@
+.md-roles-section {
+	background-color: var(--md-bg-light);
+	position: relative;
+	padding: var(--md-spacing-3xl) 0;
+}
+
+.md-roles-section__bg-pattern {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: radial-gradient(
+		rgba(67, 97, 238, 0.03) 2px,
+		transparent 2px
+	);
+	background-size: 30px 30px;
+	z-index: 0;
+}
+
+.md-roles-section__container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	position: relative;
+	z-index: 1;
+}
+
+.md-roles-section__card {
+	background-color: var(--md-bg-white);
+	border-radius: var(--md-border-radius);
+	padding: 35px 25px;
+	box-shadow: var(--md-shadow-sm);
+	transition: var(--md-transition);
+	border-top: 5px solid;
+	position: relative;
+	overflow: hidden;
+}
+
+.md-roles-section__card::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 150px;
+	height: 150px;
+	background: radial-gradient(
+		circle,
+		rgba(67, 97, 238, 0.05) 0%,
+		rgba(67, 97, 238, 0) 70%
+	);
+	border-radius: 50%;
+}
+
+.md-roles-section__card:hover {
+	transform: translateY(-10px);
+	box-shadow: var(--md-shadow-lg);
+}
+
+.md-roles-section__icon {
+	font-size: 1.75rem;
+	color: var(--md-text-white);
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 25px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+	position: relative;
+	z-index: 1;
+}
+
+.md-roles-section__icon::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: inherit;
+	filter: blur(12px);
+	opacity: 0.4;
+	z-index: -1;
+}
+
+.md-roles-section__card h3 {
+	font-size: 1.375rem;
+	margin-bottom: 1em;
+	position: relative;
+	z-index: 1;
+}
+
+.md-roles-section__card ul {
+	position: relative;
+	z-index: 1;
+}
+
+.md-roles-section__card ul li {
+	margin-bottom: 12px;
+	display: flex;
+	align-items: center;
+	color: var(--md-text-light);
+	font-size: 1rem;
+}
+
+.md-roles-section__card ul li svg {
+	margin-right: 10px;
+	color: var(--md-primary-color);
+	flex-shrink: 0;
+	font-size: 0.875rem;
+}
+
+.md-roles-section__card ul li:last-child {
+	margin-bottom: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+	.md-roles-section__container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 576px) {
+	.md-roles-section__container {
+		grid-template-columns: 1fr;
+	}
+}
