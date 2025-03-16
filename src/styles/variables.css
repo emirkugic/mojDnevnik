@@ -1,0 +1,60 @@
+:root {
+	/* Color Palette */
+	--md-primary-color: #4361ee;
+	--md-primary-dark: #3a0ca3;
+	--md-primary-light: #4cc9f0;
+	--md-accent-color: #f72585;
+	--md-secondary-accent: #7209b7;
+	--md-text-dark: #2b2d42;
+	--md-text-light: #8d99ae;
+	--md-text-white: #edf2f4;
+	--md-bg-light: #f8f9fa;
+	--md-bg-white: #ffffff;
+
+	/* Shadows */
+	--md-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+	--md-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.09);
+	--md-shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+	--md-shadow-xl: 0 30px 60px rgba(67, 97, 238, 0.1);
+
+	/* Border Radius */
+	--md-border-radius: 14px;
+	--md-border-radius-lg: 24px;
+
+	/* Transitions */
+	--md-transition: all 0.3s ease;
+	--md-transition-slow: all 0.5s ease;
+
+	/* Spacing */
+	--md-spacing-xs: 0.25rem;
+	--md-spacing-sm: 0.5rem;
+	--md-spacing-md: 1rem;
+	--md-spacing-lg: 1.5rem;
+	--md-spacing-xl: 2rem;
+	--md-spacing-2xl: 3rem;
+	--md-spacing-3xl: 4rem;
+
+	/* Font sizes */
+	--md-font-size-xs: 0.75rem;
+	--md-font-size-sm: 0.875rem;
+	--md-font-size-md: 1rem;
+	--md-font-size-lg: 1.125rem;
+	--md-font-size-xl: 1.25rem;
+	--md-font-size-2xl: 1.5rem;
+	--md-font-size-3xl: 1.875rem;
+	--md-font-size-4xl: 2.25rem;
+	--md-font-size-5xl: 3rem;
+	--md-font-size-6xl: 4rem;
+
+	/* Font weights */
+	--md-font-weight-light: 300;
+	--md-font-weight-regular: 400;
+	--md-font-weight-medium: 500;
+	--md-font-weight-semibold: 600;
+	--md-font-weight-bold: 700;
+
+	/* Z-indices */
+	--md-z-index-navbar: 1000;
+	--md-z-index-dropdown: 990;
+	--md-z-index-modal: 1050;
+}
