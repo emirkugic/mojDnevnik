@@ -65,27 +65,27 @@ const About = () => {
 	const challenges = [
 		{
 			icon: <FaClock />,
-			title: "Time-Consuming Administration",
+			title: "Administracija koja oduzima vrijeme",
 			description:
-				"Teachers spend countless hours on paperwork instead of focusing on education",
+				"Nastavnici provode nebrojene sate na papirologiji umjesto da se fokusiraju na obrazovanje",
 		},
 		{
 			icon: <FaFileAlt />,
-			title: "Fragmented Systems",
+			title: "Fragmentirani sistemi",
 			description:
-				"Multiple separate tools for attendance, grading, and communication create chaos",
+				"Višestruki odvojeni alati za prisustvo, ocjenjivanje i komunikaciju stvaraju haos",
 		},
 		{
 			icon: <FaLaptopCode />,
-			title: "Outdated Technology",
+			title: "Zastarjela tehnologija",
 			description:
-				"Legacy systems that are difficult to use and rarely updated",
+				"Naslijeđeni sistemi koji se teško koriste i rijetko ažuriraju",
 		},
 		{
 			icon: <FaUsers />,
-			title: "Poor Communication",
+			title: "Loša komunikacija",
 			description:
-				"Limited parent-teacher engagement due to inefficient communication channels",
+				"Ograničena uključenost roditelja i nastavnika zbog neefikasnih komunikacijskih kanala",
 		},
 	];
 
@@ -93,24 +93,24 @@ const About = () => {
 	const solutions = [
 		{
 			icon: <FaChalkboardTeacher />,
-			title: "All-in-One Platform",
+			title: "Sve na jednom mjestu",
 			description:
-				"Complete school management in a single, intuitive interface",
+				"Kompletno upravljanje školom na jednom intuitivnom interfejsu",
 		},
 		{
 			icon: <FaMobileAlt />,
-			title: "Modern User Experience",
-			description: "Clean, responsive design that works on any device",
+			title: "Moderno korisničko iskustvo",
+			description: "Čist, responzivan dizajn koji radi na svakom uređaju",
 		},
 		{
 			icon: <FaChartLine />,
-			title: "Data-Driven Insights",
-			description: "Analytics that help improve educational outcomes",
+			title: "Uvidi bazirani na podacima",
+			description: "Analitika koja pomaže poboljšanju obrazovnih ishoda",
 		},
 		{
 			icon: <FaLock />,
-			title: "Secure & Reliable",
-			description: "Built with the highest standards of data protection",
+			title: "Sigurno i pouzdano",
+			description: "Izgrađeno prema najvišim standardima zaštite podataka",
 		},
 	];
 
@@ -118,32 +118,32 @@ const About = () => {
 	const principles = [
 		{
 			icon: <FaLightbulb />,
-			title: "Innovation",
+			title: "Inovacija",
 			description:
-				"We never stop improving our platform based on user feedback and emerging technologies",
+				"Nikad ne prestajemo poboljšavati našu platformu na osnovu povratnih informacija korisnika i novih tehnologija",
 		},
 		{
 			icon: <FaBalanceScale />,
-			title: "Simplicity",
+			title: "Jednostavnost",
 			description:
-				"Powerful doesn't mean complicated - we focus on ease of use for all users",
+				"Moćno ne znači komplicirano - fokusiramo se na jednostavnost upotrebe za sve korisnike",
 		},
 		{
 			icon: <FaRegLightbulb />,
-			title: "Educational Impact",
+			title: "Obrazovni uticaj",
 			description:
-				"Every feature we build aims to improve the educational experience",
+				"Svaka funkcija koju gradimo ima za cilj poboljšanje obrazovnog iskustva",
 		},
 	];
 
 	// Future roadmap items
 	const roadmap = [
-		"Advanced AI assessment analysis",
-		"Custom curriculum development tools",
-		"Enhanced learning analytics",
-		"Parent-teacher collaboration spaces",
-		"Student performance prediction",
-		"Personalized learning paths",
+		"Napredna AI analiza procjena",
+		"Alati za razvoj prilagođenih nastavnih planova",
+		"Poboljšana analitika učenja",
+		"Prostori za saradnju roditelja i nastavnika",
+		"Predviđanje učeničkih performansi",
+		"Personalizirane putanje učenja",
 	];
 
 	return (
@@ -163,12 +163,12 @@ const About = () => {
 						transition={{ duration: 0.8 }}
 					>
 						<h1>
-							Reimagining{" "}
-							<span className="md-gradient-text">School Management</span>
+							Novi pogled na{" "}
+							<span className="md-gradient-text">upravljanje školom</span>
 						</h1>
 						<p>
-							Our journey to create a modern solution for today's educational
-							challenges
+							Naše putovanje u stvaranju modernog rješenja za današnje obrazovne
+							izazove
 						</p>
 					</motion.div>
 				</div>
@@ -184,28 +184,31 @@ const About = () => {
 						variants={fadeInUp}
 					>
 						<div className="md-about__vision-content">
-							<div className="md-about__badge">Our Story</div>
-							<h2>From Frustration to Innovation</h2>
+							<div className="md-about__badge">Naša priča</div>
+							<h2>Od frustracije do inovacije</h2>
 							<p>
-								mojDnevnik was born from a simple observation: schools are using
-								outdated, inefficient systems that steal valuable time from
-								teachers and administrators.
+								mojDnevnik je nastao iz jednostavnog zapažanja: škole koriste
+								zastarjele, neefikasne sisteme koji oduzimaju dragocjeno vrijeme
+								nastavnicima i administratorima.
 							</p>
 							<p>
-								As educators ourselves, we experienced firsthand the limitations
-								of legacy school management software - clunky interfaces,
-								disconnected systems, and hours lost to administrative tasks
-								that could be automated.
+								Kao edukatori, i sami smo iskusili ograničenja naslijeđenog
+								softvera za upravljanje školama - nespretni interfejsi,
+								nepovezani sistemi i sati izgubljeni na administrativne zadatke
+								koji bi se mogli automatizovati.
 							</p>
 							<p>
-								We envisioned something better: a unified, intuitive platform
-								built with modern technology that puts the focus back on
-								education instead of administration.
+								Zamislili smo nešto bolje: jedinstvenu, intuitivnu platformu
+								izgrađenu sa modernom tehnologijom koja stavlja fokus nazad na
+								obrazovanje umjesto na administraciju.
 							</p>
 						</div>
 						<div className="md-about__vision-image">
 							<div className="md-about__image-wrapper">
-								<img src="/image2.png" alt="Modern school management vision" />
+								<img
+									src="/image2.png"
+									alt="Moderna vizija upravljanja školom"
+								/>
 								<div className="md-about__image-overlay"></div>
 							</div>
 						</div>
@@ -218,9 +221,9 @@ const About = () => {
 				<div className="md-container">
 					<div className="md-section-header">
 						<h2>
-							The <span className="md-gradient-text">Challenges</span>
+							<span className="md-gradient-text">Izazovi</span>
 						</h2>
-						<p>Why existing school management systems aren't working</p>
+						<p>Zašto postojeći sistemi za upravljanje školama ne funkcionišu</p>
 					</div>
 
 					<motion.div
@@ -249,9 +252,9 @@ const About = () => {
 				<div className="md-container">
 					<div className="md-section-header">
 						<h2>
-							Our <span className="md-gradient-text">Solution</span>
+							Naše <span className="md-gradient-text">rješenje</span>
 						</h2>
-						<p>How mojDnevnik addresses these challenges</p>
+						<p>Kako mojDnevnik odgovara na ove izazove</p>
 					</div>
 
 					<div className="md-about__solution-content">
@@ -263,8 +266,8 @@ const About = () => {
 							}
 							transition={{ duration: 0.8 }}
 						>
-							<img src="/image4.png" alt="mojDnevnik platform" />
-							<img src="/image2.png" alt="mojDnevnik platform" />
+							<img src="/image4.png" alt="mojDnevnik platforma" />
+							<img src="/image2.png" alt="mojDnevnik platforma" />
 						</motion.div>
 
 						<motion.div
@@ -296,9 +299,9 @@ const About = () => {
 				<div className="md-container">
 					<div className="md-section-header">
 						<h2>
-							Our <span className="md-gradient-text">Principles</span>
+							Naši <span className="md-gradient-text">principi</span>
 						</h2>
-						<p>The values that guide our development</p>
+						<p>Vrijednosti koje vode naš razvoj</p>
 					</div>
 
 					<motion.div
@@ -332,38 +335,38 @@ const About = () => {
 						variants={fadeInUp}
 					>
 						<div className="md-about__founder-image">
-							<img src="/image3.png" alt="Founder" />
+							<img src="/pfp.jpg" alt="Osnivač" />
 							<div className="md-about__founder-quote">
 								<p>
-									"I believe technology should empower teachers, not burden them
-									with more work."
+									"Vjerujem da tehnologija treba osnažiti nastavnike, a ne
+									opteretiti ih s više posla."
 								</p>
 							</div>
 						</div>
 						<div className="md-about__founder-text">
-							<div className="md-about__badge">Meet the Founder</div>
-							<h2>From Classroom to Code</h2>
+							<div className="md-about__badge">Upoznajte osnivača</div>
+							<h2>Od učionice do koda</h2>
 							<p>
-								As a former educator who spent years battling with outdated
-								school management systems, I experienced firsthand how
-								technology that was meant to help was actually getting in the
-								way.
+								Kao bivši edukator, nije mi bilo potrebno mnogo vremena da
+								primijetim kako rad sa zastarjelim sistemima za upravljanje
+								škola zapravo ugrožava efikasnost i kvalitet obrazovanja.
 							</p>
 							<p>
-								After one particularly frustrating day spent wrestling with
-								three different systems just to complete basic administrative
-								tasks, I decided there had to be a better way.
+								Nakon jednog posebno frustrirajućeg dana provedenog boreći se s
+								tri različita sistema samo da bih završio osnovne
+								administrativne zadatke, odlučio sam da mora postojati bolji
+								način.
 							</p>
 							<p>
-								I assembled a small team of educators and developers who shared
-								my vision, and we began building mojDnevnik - the comprehensive,
-								user-friendly school management system we had always wished for
-								during our teaching careers.
+								Okupio sam mali tim edukatora i programera koji su dijelili moju
+								viziju, i počeli smo graditi mojDnevnik - sveobuhvatni,
+								jednostavni sistem za upravljanje školom o kojem smo uvijek
+								maštali tokom naših nastavničkih karijera.
 							</p>
 							<p>
-								Today, our mission is to give educators back the time they
-								deserve to focus on what truly matters: teaching and inspiring
-								the next generation.
+								Danas je naša misija da edukatorima vratimo vrijeme koje
+								zaslužuju da se fokusiraju na ono što je zaista važno:
+								podučavanje i inspirisanje nove generacije.
 							</p>
 						</div>
 					</motion.div>
@@ -375,9 +378,9 @@ const About = () => {
 				<div className="md-container">
 					<div className="md-section-header md-about__future-header">
 						<h2>
-							The <span className="md-gradient-text">Road Ahead</span>
+							<span className="md-gradient-text">Put naprijed</span>
 						</h2>
-						<p>Our vision for the future of mojDnevnik</p>
+						<p>Naša vizija za budućnost mojDnevnika</p>
 					</div>
 
 					<motion.div
@@ -388,12 +391,12 @@ const About = () => {
 					>
 						<div className="md-about__future-text">
 							<p>
-								We're just getting started on our journey to transform
-								educational management. As we grow, we're focused on
-								continuously improving mojDnevnik with new features and
-								capabilities that further empower schools.
+								Tek smo na početku našeg putovanja za transformaciju upravljanja
+								obrazovanjem. Kako rastemo, fokusirani smo na kontinuirano
+								poboljšanje mojDnevnika s novim funkcijama i mogućnostima koje
+								dalje osnažuju škole.
 							</p>
-							<h3>On Our Roadmap:</h3>
+							<h3>Na našem planu razvoja:</h3>
 							<ul className="md-about__roadmap-list">
 								{roadmap.map((item, index) => (
 									<motion.li
@@ -412,7 +415,7 @@ const About = () => {
 							</ul>
 						</div>
 						<div className="md-about__future-image">
-							<img src="/image3.png" alt="Future vision" />
+							<img src="/image3.png" alt="Vizija budućnosti" />
 						</div>
 					</motion.div>
 				</div>
@@ -422,14 +425,14 @@ const About = () => {
 			<section className="md-section md-about__cta">
 				<div className="md-container">
 					<div className="md-about__cta-card">
-						<h2>Join us on our mission</h2>
-						<p>Be part of the revolution in school management technology</p>
+						<h2>Pridružite nam se u našoj misiji</h2>
+						<p>Budite dio revolucije u tehnologiji upravljanja školama</p>
 						<div className="md-about__cta-buttons">
 							<a href="/contact" className="md-btn md-btn-primary">
-								Request a Demo
+								Zatražite demo
 							</a>
 							<a href="/contact" className="md-btn md-btn-secondary">
-								Contact Us
+								Kontaktirajte nas
 							</a>
 						</div>
 					</div>

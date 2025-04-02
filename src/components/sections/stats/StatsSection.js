@@ -11,10 +11,10 @@ const StatsSection = ({ stats }) => {
 
 	// Default stats if none provided
 	const defaultStats = [
-		{ value: "85%", label: "Time Saved on Administrative Tasks" },
-		{ value: "92%", label: "Satisfaction Rate among Users" },
-		{ value: "10k+", label: "Active Users" },
-		{ value: "50+", label: "Schools Using mojDnevnik" },
+		{ value: "85%", label: "Ušteđenog vremena na administrativnim zadacima" },
+		{ value: "100%", label: "Stopa zadovoljstva korisnika" },
+		{ value: "10k+", label: "Aktivnih korisnika" },
+		{ value: "50+", label: "Škola koje koriste mojDnevnik" },
 	];
 
 	const statsData = stats || defaultStats;

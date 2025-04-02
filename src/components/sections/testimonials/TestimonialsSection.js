@@ -14,23 +14,23 @@ const TestimonialsSection = ({ testimonials }) => {
 	const defaultTestimonials = [
 		{
 			quote:
-				"mojDnevnik transformed how we manage our school. Everything from attendance to grades is now streamlined in one place, saving us countless hours every week.",
+				"mojDnevnik je transformisao način na koji upravljamo našom školom. Sve od prisustva do ocjena je sada pojednostavljeno na jednom mjestu, što nam štedi bezbroj sati svake sedmice.",
 			name: "Ana Petrović",
-			role: "School Principal",
+			role: "Direktor škole",
 			image: "/image3.png",
 		},
 		{
 			quote:
-				"As a parent, I love being able to check my children's progress directly from my phone. The interface is intuitive and keeps me informed about their academic journey.",
+				"Kao roditelj, volim što mogu provjeriti napredak svoje djece direktno sa svog telefona. Interfejs je intuitivan i održava me informisanim o njihovom akademskom putovanju.",
 			name: "Marko Novak",
-			role: "Parent",
+			role: "Roditelj",
 			image: "/image4.png",
 		},
 		{
 			quote:
-				"The reporting features save me hours each week. I can focus more on teaching and less on paperwork. It's become indispensable to our school's operations.",
+				"Funkcije izvještavanja mi štede sate svake sedmice. Mogu se više fokusirati na podučavanje, a manje na papirologiju. Postalo je neophodno za rad naše škole.",
 			name: "Ivana Kovač",
-			role: "Class Teacher",
+			role: "Razrednik",
 			image: "/image5.png",
 		},
 	];
@@ -58,10 +58,10 @@ const TestimonialsSection = ({ testimonials }) => {
 					variants={fadeInUp}
 				>
 					<h2 className="md-section-header__title">
-						What Our <span className="md-gradient-text">Users Say</span>
+						Šta kažu naši <span className="md-gradient-text">korisnici</span>
 					</h2>
 					<p className="md-section-header__subtitle">
-						Trusted by schools across the country
+						Pouzdan od strane škola širom zemlje
 					</p>
 				</motion.div>
 

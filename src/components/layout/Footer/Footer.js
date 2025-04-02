@@ -31,7 +31,7 @@ const Footer = () => {
 						<h2>
 							moj<span>Dnevnik</span>
 						</h2>
-						<p>The complete school management solution</p>
+						<p>Kompletno rješenje za upravljanje školom</p>
 						<div className="md-footer__social">
 							<a
 								href="https://facebook.com"
@@ -69,65 +69,65 @@ const Footer = () => {
 					</div>
 					<div className="md-footer__links">
 						<div className="md-footer__group">
-							<h4>Product</h4>
+							<h4>Proizvod</h4>
 							<ul>
 								<li>
-									<Link to="/features">Features</Link>
+									<Link to="/features">Funkcije</Link>
 								</li>
 								<li>
-									<Link to="/for-schools">User Roles</Link>
+									<Link to="/for-schools">Korisničke uloge</Link>
 								</li>
 								<li>
-									<Link to="/benefits">Benefits</Link>
+									<Link to="/benefits">Prednosti</Link>
 								</li>
 								<li>
-									<Link to="/pricing">Pricing</Link>
+									<Link to="/pricing">Cijene</Link>
 								</li>
 							</ul>
 						</div>
 						<div className="md-footer__group">
-							<h4>Resources</h4>
+							<h4>Resursi</h4>
 							<ul>
 								<li>
-									<Link to="/faq">FAQ</Link>
+									<Link to="/faq">Pitanja</Link>
 								</li>
 								<li>
 									<Link to="/blog">Blog</Link>
 								</li>
 								<li>
-									<Link to="/support">Support</Link>
+									<Link to="/support">Podrška</Link>
 								</li>
 								<li>
-									<Link to="/documentation">Documentation</Link>
+									<Link to="/documentation">Dokumentacija</Link>
 								</li>
 							</ul>
 						</div>
 						<div className="md-footer__group">
-							<h4>Company</h4>
+							<h4>Kompanija</h4>
 							<ul>
 								<li>
-									<Link to="/about">About Us</Link>
+									<Link to="/about">O nama</Link>
 								</li>
 								<li>
-									<Link to="/contact">Contact</Link>
+									<Link to="/contact">Kontakt</Link>
 								</li>
 								<li>
-									<Link to="/careers">Careers</Link>
+									<Link to="/careers">Karijere</Link>
 								</li>
 								<li>
-									<Link to="/legal">Legal</Link>
+									<Link to="/legal">Pravno</Link>
 								</li>
 							</ul>
 						</div>
 					</div>
 					<div className="md-footer__contact">
-						<h4>Contact Us</h4>
+						<h4>Kontaktirajte nas</h4>
 						<p>info@mojdnevnik.com</p>
 						<p>+387 62 909 200</p>
 						<div className="md-footer__newsletter">
-							<h4>Stay Updated</h4>
+							<h4>Ostanite informisani</h4>
 							<div className="md-footer__form">
-								<input type="email" placeholder="Enter your email" />
+								<input type="email" placeholder="Unesite vašu email adresu" />
 								<button type="submit">
 									<FaChevronRight />
 								</button>
@@ -137,11 +137,11 @@ const Footer = () => {
 				</div>
 				<div className="md-footer__bottom">
 					<p>
-						&copy; {new Date().getFullYear()} mojDnevnik. All rights reserved.
+						&copy; {new Date().getFullYear()} mojDnevnik. Sva prava zadržana.
 					</p>
 					<div className="md-footer__legal">
-						<Link to="/privacy">Privacy Policy</Link>
-						<Link to="/terms">Terms of Service</Link>
+						<Link to="/privacy">Politika privatnosti</Link>
+						<Link to="/terms">Uslovi korištenja</Link>
 					</div>
 				</div>
 			</div>

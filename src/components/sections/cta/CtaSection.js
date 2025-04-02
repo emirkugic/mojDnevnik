@@ -27,40 +27,44 @@ const CtaSection = () => {
 			>
 				<div className="md-cta-section__content">
 					<h2>
-						Ready to transform your{" "}
-						<span className="md-gradient-text-white">school management</span>?
+						Spremni za transformaciju{" "}
+						<span className="md-gradient-text-white">upravljanja školom</span>?
 					</h2>
 					<p>
-						Get in touch for a personalized demo and see how mojDnevnik can work
-						for your institution.
+						Kontaktirajte nas za personalizovani demo i saznajte kako mojDnevnik
+						može raditi za vašu instituciju.
 					</p>
 					<form className="md-cta-section__form">
 						<div className="md-cta-section__form-row">
 							<div className="md-cta-section__form-group">
-								<label>School Name</label>
-								<input type="text" placeholder="Enter school name" required />
+								<label>Naziv škole</label>
+								<input type="text" placeholder="Unesite naziv škole" required />
 							</div>
 							<div className="md-cta-section__form-group">
-								<label>Email Address</label>
+								<label>Email adresa</label>
 								<input
 									type="email"
-									placeholder="Enter email address"
+									placeholder="Unesite email adresu"
 									required
 								/>
 							</div>
 						</div>
 						<div className="md-cta-section__form-row">
 							<div className="md-cta-section__form-group">
-								<label>Contact Person</label>
-								<input type="text" placeholder="Enter contact name" required />
+								<label>Kontakt osoba</label>
+								<input
+									type="text"
+									placeholder="Unesite ime kontakt osobe"
+									required
+								/>
 							</div>
 							<div className="md-cta-section__form-group">
-								<label>Phone Number</label>
-								<input type="tel" placeholder="Enter phone number" />
+								<label>Broj telefona</label>
+								<input type="tel" placeholder="Unesite broj telefona" />
 							</div>
 						</div>
 						<button type="submit" className="md-btn md-btn-primary">
-							Request Demo{" "}
+							Zatražite demo{" "}
 							<span className="md-btn-icon">
 								<FaChevronRight />
 							</span>

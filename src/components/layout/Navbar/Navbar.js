@@ -34,17 +34,17 @@ const Navbar = () => {
 					<ul>
 						<li>
 							<Link to="/about" onClick={() => setIsMenuOpen(false)}>
-								About Us
+								O nama
 							</Link>
 						</li>
 						<li>
 							<Link to="/pricing" onClick={() => setIsMenuOpen(false)}>
-								Pricing
+								Cijene
 							</Link>
 						</li>
 						{/* <li>
 							<Link to="/gallery" onClick={() => setIsMenuOpen(false)}>
-								Gallery
+								Galerija
 							</Link>
 						</li> */}
 						{/* <li>
@@ -54,12 +54,12 @@ const Navbar = () => {
 						</li> */}
 						<li>
 							<Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-								Contact
+								Kontakt
 							</Link>
 						</li>
 						<li className="md-navbar__cta">
 							<Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-								Request Demo
+								Zatraži Demo
 							</Link>
 						</li>
 					</ul>

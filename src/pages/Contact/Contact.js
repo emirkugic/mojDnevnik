@@ -85,24 +85,24 @@ const Contact = () => {
 		// 		"We offer flexible pricing plans based on the size of your school and the features you need. Our basic plan starts at $99/month for small schools, with discounts available for annual subscriptions. Contact us for a customized quote tailored to your specific requirements.",
 		// },
 		{
-			question: "Do you offer a free trial?",
+			question: "Da li nudite besplatnu probnu verziju?",
 			answer:
-				"Yes! We offer a 30-day free trial with full access to all features so you can experience how mojDnevnik can transform your school management processes. No credit card required to start your trial.",
+				"Da! Nudimo 30-dnevnu besplatnu probnu verziju s punim pristupom svim funkcijama kako biste iskusili kako mojDnevnik može transformisati vaše procese upravljanja školom. Nije potrebna kreditna kartica za početak probnog perioda.",
 		},
 		{
-			question: "How long does implementation take?",
+			question: "Koliko traje implementacija?",
 			answer:
-				"The typical implementation process takes 5-10 days, depending on your school's size and specific needs. Our dedicated support team will guide you through every step, from initial setup to data migration and staff training.",
+				"Tipični proces implementacije traje 5-10 dana, ovisno o veličini vaše škole i specifičnim potrebama. Naš tim za podršku će vas voditi kroz svaki korak, od početnog podešavanja do migracije podataka i obuke osoblja.",
 		},
 		{
-			question: "Is mojDnevnik compliant with data protection regulations?",
+			question: "Da li je mojDnevnik usklađen s propisima o zaštiti podataka?",
 			answer:
-				"Absolutely. mojDnevnik is fully compliant with GDPR and other relevant data protection regulations. We implement industry-leading security measures to ensure your school's data remains protected at all times.",
+				"Apsolutno. mojDnevnik je potpuno usklađen s GDPR-om i drugim relevantnim propisima o zaštiti podataka. Implementiramo sigurnosne mjere na nivou industrije kako bismo osigurali da podaci vaše škole ostanu zaštićeni u svakom trenutku.",
 		},
 		{
-			question: "What kind of support do you offer?",
+			question: "Kakvu podršku nudite?",
 			answer:
-				"We provide comprehensive support including a dedicated implementation specialist, regular check-ins, technical support via email and phone, and a knowledge base with tutorials and guides. Our support team is available Monday through Friday from 8am to 6pm.",
+				"Pružamo sveobuhvatnu podršku uključujući posvećenog specijalista za implementaciju, redovne provjere, tehničku podršku putem e-maila i telefona, te bazu znanja s tutorijалima i vodičima. Naš tim za podršku je dostupan od ponedjeljka do petka od 8 do 18 sati.",
 		},
 	];
 
@@ -110,21 +110,21 @@ const Contact = () => {
 	const supportOptions = [
 		{
 			icon: <FaHeadset />,
-			title: "Customer Support",
-			description: "Get help with any questions or issues",
-			cta: "Email support@mojdnevnik.com",
+			title: "Korisnička podrška",
+			description: "Dobijte pomoć za sva pitanja ili probleme",
+			cta: "Pošaljite email na support@mojdnevnik.com",
 		},
 		{
 			icon: <FaSchool />,
-			title: "School Onboarding",
-			description: "Request assistance with implementation",
-			cta: "Schedule a call",
+			title: "Implementacija u školi",
+			description: "Zatražite pomoć pri implementaciji",
+			cta: "Zakažite poziv",
 		},
 		{
 			icon: <FaUsers />,
-			title: "Partnerships",
-			description: "Explore partnership opportunities",
-			cta: "Partner with us",
+			title: "Partnerstva",
+			description: "Istražite mogućnosti partnerstva",
+			cta: "Postanite partner",
 		},
 	];
 
@@ -144,15 +144,14 @@ const Contact = () => {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5 }}
 						>
-							Get in <span className="md-gradient-text">Touch</span>
+							Stupite u <span className="md-gradient-text">kontakt</span>
 						</motion.h1>
 						<motion.p
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5, delay: 0.1 }}
 						>
-							We'd love to hear from you. Reach out for a demo, questions, or
-							support.
+							Rado ćemo vas čuti. Javite se za demo, pitanja ili podršku.
 						</motion.p>
 					</div>
 				</div>
@@ -171,26 +170,26 @@ const Contact = () => {
 							variants={fadeInLeft}
 						>
 							<div className="md-contact__form-container">
-								<div className="md-contact__badge">How can we help?</div>
-								<h2>Send us a message</h2>
+								<div className="md-contact__badge">Kako vam možemo pomoći?</div>
+								<h2>Pošaljite nam poruku</h2>
 								<p>
-									Fill out the form below and our team will get back to you
-									within 24 hours.
+									Ispunite obrazac ispod i naš tim će vam odgovoriti u roku od
+									24 sata.
 								</p>
 
 								{submitted ? (
 									<div className="md-contact__success">
 										<div className="md-contact__success-icon">✓</div>
-										<h3>Thank you!</h3>
+										<h3>Hvala vam!</h3>
 										<p>
-											Your message has been sent successfully. We'll be in touch
-											shortly.
+											Vaša poruka je uspješno poslana. Uskoro ćemo vas
+											kontaktirati.
 										</p>
 									</div>
 								) : (
 									<form className="md-contact__form" onSubmit={handleSubmit}>
 										<div className="md-contact__form-group">
-											<label htmlFor="name">Your Name</label>
+											<label htmlFor="name">Vaše ime</label>
 											<input
 												type="text"
 												id="name"
@@ -200,7 +199,7 @@ const Contact = () => {
 											/>
 										</div>
 										<div className="md-contact__form-group">
-											<label htmlFor="email">Email Address</label>
+											<label htmlFor="email">Email adresa</label>
 											<input
 												type="email"
 												id="email"
@@ -210,7 +209,7 @@ const Contact = () => {
 											/>
 										</div>
 										<div className="md-contact__form-group">
-											<label htmlFor="school">School Name</label>
+											<label htmlFor="school">Naziv škole</label>
 											<input
 												type="text"
 												id="school"
@@ -219,7 +218,7 @@ const Contact = () => {
 											/>
 										</div>
 										<div className="md-contact__form-group">
-											<label htmlFor="message">Your Message</label>
+											<label htmlFor="message">Vaša poruka</label>
 											<textarea
 												id="message"
 												rows="5"
@@ -229,7 +228,7 @@ const Contact = () => {
 											></textarea>
 										</div>
 										<button type="submit" className="md-btn md-btn-primary">
-											Send Message{" "}
+											Pošalji poruku{" "}
 											<span className="md-btn-icon">
 												<FaPaperPlane />
 											</span>
@@ -248,14 +247,14 @@ const Contact = () => {
 							variants={fadeInRight}
 						>
 							<div className="md-contact__info-card">
-								<h2>Contact Information</h2>
+								<h2>Kontakt informacije</h2>
 								<ul className="md-contact__info-list">
 									<li>
 										<div className="md-contact__info-icon">
 											<FaEnvelope />
 										</div>
 										<div className="md-contact__info-content">
-											<h3>Email Us</h3>
+											<h3>Email</h3>
 											<p>info@mojdnevnik.ba</p>
 										</div>
 									</li>
@@ -264,7 +263,7 @@ const Contact = () => {
 											<FaPhone />
 										</div>
 										<div className="md-contact__info-content">
-											<h3>Call Us</h3>
+											<h3>Telefon</h3>
 											<p>+387 62 909 200</p>
 										</div>
 									</li>
@@ -273,13 +272,13 @@ const Contact = () => {
 											<FaMapMarkerAlt />
 										</div>
 										<div className="md-contact__info-content">
-											<h3>Visit Us</h3>
+											<h3>Posjetite nas</h3>
 											<p>
-												Innovation Center
+												Inovacijski centar
 												<br />
-												Tech Park Street 123
+												Ulica Tehnološkog parka 123
 												<br />
-												71000 Sarajevo, Bosnia
+												71000 Sarajevo, Bosna
 											</p>
 										</div>
 									</li> */}
@@ -288,18 +287,18 @@ const Contact = () => {
 											<FaClock />
 										</div>
 										<div className="md-contact__info-content">
-											<h3>Business Hours</h3>
+											<h3>Radno vrijeme</h3>
 											<p>
-												Monday - Friday: 9:00 AM - 5:00 PM
+												Ponedjeljak - Petak: 9:00 - 17:00
 												<br />
-												Saturday & Sunday: Closed
+												Subota i Nedjelja: Zatvoreno
 											</p>
 										</div>
 									</li>
 								</ul>
 
 								<div className="md-contact__social">
-									<h3>Connect With Us</h3>
+									<h3>Povežite se s nama</h3>
 									<div className="md-contact__social-links">
 										<a
 											href="#"
@@ -338,9 +337,9 @@ const Contact = () => {
 							</div>
 
 							{/* <div className="md-contact__map">
-								<img src="/image2.png" alt="Office Location Map" />
+								<img src="/image2.png" alt="Mapa lokacije ureda" />
 								<div className="md-contact__map-badge">
-									<FaMapMarkerAlt /> Our Office
+									<FaMapMarkerAlt /> Naš ured
 								</div>
 							</div> */}
 						</motion.div>
@@ -353,9 +352,9 @@ const Contact = () => {
 				<div className="md-container">
 					<div className="md-section-header">
 						<h2>
-							How Can We <span className="md-gradient-text">Help?</span>
+							Kako vam možemo <span className="md-gradient-text">pomoći?</span>
 						</h2>
-						<p>Choose the support option that works best for you</p>
+						<p>Odaberite opciju podrške koja vam najviše odgovara</p>
 					</div>
 
 					<div className="md-contact__support-grid">
@@ -383,10 +382,10 @@ const Contact = () => {
 						variants={fadeInUp}
 					>
 						<h2>
-							Frequently Asked{" "}
-							<span className="md-gradient-text">Questions</span>
+							Često postavljana{" "}
+							<span className="md-gradient-text">pitanja</span>
 						</h2>
-						<p>Find quick answers to common questions</p>
+						<p>Pronađite brze odgovore na česta pitanja</p>
 					</motion.div>
 
 					<motion.div
@@ -438,14 +437,17 @@ const Contact = () => {
 			<section className="md-section md-contact__cta">
 				<div className="md-container">
 					<div className="md-contact__cta-card">
-						<h2>Ready to transform your school management?</h2>
-						<p>Try mojDnevnik free for 30 days. No credit card required.</p>
+						<h2>Spremni za transformaciju upravljanja školom?</h2>
+						<p>
+							Isprobajte mojDnevnik besplatno 30 dana. Nije potrebna kreditna
+							kartica.
+						</p>
 						<div className="md-contact__cta-buttons">
 							{/* <a href="#" className="md-btn md-btn-primary">
-								Start Free Trial
+								Započnite besplatnu probu
 							</a> */}
 							<a href="#" className="md-btn md-btn-secondary">
-								Request Demo
+								Zatražite demo
 							</a>
 						</div>
 					</div>

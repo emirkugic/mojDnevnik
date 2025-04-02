@@ -36,10 +36,12 @@ const BenefitsSection = ({ benefits }) => {
 						variants={fadeInUp}
 					>
 						<h2 className="md-section-header__title">
-							Why Choose <span className="md-gradient-text">mojDnevnik</span>?
+							Zašto odabrati{" "}
+							<span className="md-gradient-text">mojDnevnik</span>?
 						</h2>
 						<p className="md-section-header__subtitle">
-							Transform how your school operates with our comprehensive solution
+							Transformišite način rada vaše škole s našim sveobuhvatnim
+							rješenjem
 						</p>
 					</motion.div>
 
@@ -74,7 +76,7 @@ const BenefitsSection = ({ benefits }) => {
 					transition={{ duration: 0.6, delay: 0.3 }}
 				>
 					<div className="md-benefits-section__image-card">
-						<img src="/image3.png" alt="Teacher using mojDnevnik" />
+						<img src="/image3.png" alt="Nastavnik koristi mojDnevnik" />
 						<div className="md-benefits-section__image-overlay"></div>
 					</div>
 				</motion.div>

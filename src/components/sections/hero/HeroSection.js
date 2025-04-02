@@ -39,25 +39,27 @@ const HeroSection = () => {
 					animate={heroInView ? "visible" : "hidden"}
 					variants={fadeInUp}
 				>
-					<div className="md-hero-section__badge">School Management System</div>
+					<div className="md-hero-section__badge">
+						Sistem za upravljanje školom
+					</div>
 					<h1>
-						Simplify School <span className="md-gradient-text">Management</span>
+						Jednostavno upravljanje{" "}
+						<span className="md-gradient-text">školom</span>
 					</h1>
-					<h2>One platform for teachers, students, and parents</h2>
+					<h2>Jedna platforma za nastavnike, učenike i roditelje</h2>
 					<p>
-						mojDnevnik is a comprehensive school management system that
-						streamlines attendance, grading, assessments, and communication -
-						all in one place, accessible anywhere.
+						mojDnevnik je sveobuhvatan sistem za upravljanje školom koji
+						pojednostavljuje praćenje prisustva, ocjenjivanje i komunikaciju.
 					</p>
 					<div className="md-hero-section__buttons">
 						<a href="#contact" className="md-btn md-btn-primary">
-							Get Started{" "}
+							Započnite{" "}
 							<span className="md-btn-icon">
 								<FaChevronRight />
 							</span>
 						</a>
 						<a href="#features" className="md-btn md-btn-secondary">
-							Learn More
+							Saznajte više
 						</a>
 					</div>
 				</motion.div>
@@ -71,23 +73,23 @@ const HeroSection = () => {
 						<img src="/image1.png" alt="mojDnevnik Dashboard Preview" />
 						<div className="md-hero-section__floating-card md-hero-section__card-1">
 							<FaCheckSquare />
-							<span>Attendance Tracked</span>
+							<span>Praćenje prisustva</span>
 						</div>
 						<div className="md-hero-section__floating-card md-hero-section__card-2">
 							<FaChartBar />
-							<span>Grades Updated</span>
+							<span>Ažurirane ocjene</span>
 						</div>
 						<div className="md-hero-section__floating-card md-hero-section__card-3">
 							<FaCalendarAlt />
-							<span>Schedule Created</span>
+							<span>Kreiran raspored</span>
 						</div>
 						<div className="md-hero-section__floating-card md-hero-section__card-4">
 							<FaBell />
-							<span>Notifications Sent</span>
+							<span>Poslane obavijesti</span>
 						</div>
 						<div className="md-hero-section__floating-card md-hero-section__card-5">
 							<FaFileAlt />
-							<span>Reports Generated</span>
+							<span>Generisani izvještaji</span>
 						</div>
 					</div>
 				</motion.div>

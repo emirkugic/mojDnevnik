@@ -37,10 +37,10 @@ const RolesSection = ({ roles }) => {
 					variants={fadeInUp}
 				>
 					<h2 className="md-section-header__title">
-						Tailored for <span className="md-gradient-text">Everyone</span>
+						Prilagođeno za <span className="md-gradient-text">svakoga</span>
 					</h2>
 					<p className="md-section-header__subtitle">
-						Specific features designed for each role in your school
+						Specifične funkcije dizajnirane za svaku ulogu u vašoj školi
 					</p>
 				</motion.div>
 

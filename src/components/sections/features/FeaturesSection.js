@@ -22,33 +22,33 @@ const FeaturesSection = ({ features }) => {
 	const defaultFeatures = [
 		{
 			icon: <FaBook />,
-			title: "Lesson Management",
-			desc: "Log and organize lessons efficiently with integrated curriculum tracking",
+			title: "Upravljanje lekcijama",
+			desc: "Efikasno evidentirajte i organizujte lekcije s integrisanim praćenjem nastavnog plana",
 		},
 		{
 			icon: <FaCheckSquare />,
-			title: "Attendance Tracking",
-			desc: "Mark and monitor student attendance with real-time analytics",
+			title: "Praćenje prisustva",
+			desc: "Označite i pratite prisustvo učenika sa analitikom u realnom vremenu",
 		},
 		{
 			icon: <FaChartBar />,
-			title: "Assessments & Grading",
-			desc: "Create assessments and grade students with customizable criteria",
+			title: "Procjene i ocjenjivanje",
+			desc: "Kreirajte procjene i ocjenjujte učenike s prilagodljivim kriterijima",
 		},
 		{
 			icon: <FaUsers />,
-			title: "Class Overview",
-			desc: "Comprehensive class performance insights with detailed analytics",
+			title: "Pregled razreda",
+			desc: "Sveobuhvatni uvidi u performanse razreda s detaljnom analitikom",
 		},
 		{
 			icon: <FaMobileAlt />,
-			title: "Mobile Responsive",
-			desc: "Access from any device, anywhere with our responsive design",
+			title: "Prilagođeno mobilnim uređajima",
+			desc: "Pristupite s bilo kojeg uređaja, bilo gdje s našim responzivnim dizajnom",
 		},
 		{
 			icon: <FaShieldAlt />,
-			title: "Secure Access",
-			desc: "Role-based permissions system ensuring data security",
+			title: "Siguran pristup",
+			desc: "Sistem dozvola zasnovan na ulogama koji osigurava sigurnost podataka",
 		},
 	];
 
@@ -80,10 +80,10 @@ const FeaturesSection = ({ features }) => {
 					variants={fadeInUp}
 				>
 					<h2 className="md-section-header__title">
-						Powerful <span className="md-gradient-text">Features</span>
+						Moćne <span className="md-gradient-text">funkcije</span>
 					</h2>
 					<p className="md-section-header__subtitle">
-						Everything you need to run your school efficiently
+						Sve što vam je potrebno za efikasno vođenje škole
 					</p>
 				</motion.div>
 
@@ -132,8 +132,8 @@ const FeaturesSection = ({ features }) => {
 						/>
 						<div className="md-features-section__showcase-overlay">
 							<div className="md-features-section__overlay-content">
-								<h3>Intuitive Interface</h3>
-								<p>Designed for ease of use across all devices</p>
+								<h3>Intuitivni interfejs</h3>
+								<p>Dizajniran za jednostavnu upotrebu na svim uređajima</p>
 							</div>
 						</div>
 					</div>

@@ -33,69 +33,69 @@ const Homepage = () => {
 	// User roles data
 	const roles = [
 		{
-			title: "Teachers",
+			title: "Nastavnici",
 			icon: <FaUserGraduate />,
 			color: "#4361EE",
 			features: [
-				"Record lessons",
-				"Track attendance",
-				"Create assessments",
-				"Grade students",
+				"Evidentirajte lekcije",
+				"Pratite prisustvo",
+				"Kreirajte procjene",
+				"Ocjenjujte učenike",
 			],
 		},
 		{
-			title: "Class Teachers",
+			title: "Razrednici",
 			icon: <FaUserTie />,
 			color: "#3A0CA3",
 			features: [
-				"All teacher features",
-				"Class overview",
-				"Generate reports",
-				"Parent communication",
+				"Sve funkcije nastavnika",
+				"Pregled razreda",
+				"Generisanje izvještaja",
+				"Komunikacija s roditeljima",
 			],
 		},
 		{
-			title: "Parents",
+			title: "Roditelji",
 			icon: <FaComments />,
 			color: "#4CC9F0",
 			features: [
-				"View child's progress",
-				"Check attendance",
-				"See assessments",
-				"Download reports",
+				"Pregled napretka djeteta",
+				"Provjera prisustva",
+				"Uvid u procjene",
+				"Preuzimanje izvještaja",
 			],
 		},
 		{
-			title: "Students",
+			title: "Učenici",
 			icon: <FaGraduationCap />,
 			color: "#F72585",
 			features: [
-				"Access grades",
-				"View schedule",
-				"See attendance",
-				"Track progress",
+				"Pristup ocjenama",
+				"Pregled rasporeda",
+				"Uvid u prisustvo",
+				"Praćenje napretka",
 			],
 		},
 		{
-			title: "Administrators",
+			title: "Administratori",
 			icon: <FaShieldAlt />,
 			color: "#7209B7",
 			features: [
-				"Manage all users",
-				"System configuration",
-				"School-wide reports",
-				"Complete control",
+				"Upravljanje korisnicima",
+				"Konfiguracija sistema",
+				"Izvještaji na nivou škole",
+				"Potpuna kontrola",
 			],
 		},
 		{
-			title: "IT Support",
+			title: "IT podrška",
 			icon: <FaLaptopCode />,
 			color: "#22577A",
 			features: [
-				"User management",
-				"Technical support",
-				"System updates",
-				"Data backup",
+				"Upravljanje korisnicima",
+				"Tehnička podrška",
+				"Ažuriranja sistema",
+				"Backup podataka",
 			],
 		},
 	];
@@ -104,18 +104,18 @@ const Homepage = () => {
 	const benefits = [
 		{
 			icon: <FaClock />,
-			title: "Save Time",
-			desc: "Automate routine tasks and reduce paperwork by up to 70%",
+			title: "Uštedite vrijeme",
+			desc: "Automatizujte rutinske zadatke i smanjite papirologiju do 70%",
 		},
 		{
 			icon: <FaMedal />,
-			title: "Improve Quality",
-			desc: "Enhance educational standards with data-driven insights and analytics",
+			title: "Poboljšajte kvalitet",
+			desc: "Unaprijedite obrazovne standarde pomoću uvida i analitike zasnovanih na podacima",
 		},
 		{
 			icon: <FaChartLine />,
-			title: "Track Progress",
-			desc: "Monitor student development with comprehensive metrics and visual reports",
+			title: "Pratite napredak",
+			desc: "Pratite razvoj učenika pomoću sveobuhvatnih metrika i vizualnih izvještaja",
 		},
 	];
 
@@ -123,23 +123,23 @@ const Homepage = () => {
 	const galleryItems = [
 		{
 			image: "/image1.png",
-			title: "Dashboard Interface",
-			desc: "User-friendly dashboard with key information at a glance",
+			title: "Dashboard interfejs",
+			desc: "Jednostavan za korištenje dashboard s ključnim informacijama na prvi pogled",
 		},
 		{
 			image: "/image2.png",
-			title: "Grade Management",
-			desc: "Easy-to-use grading system with detailed analytics",
+			title: "Upravljanje ocjenama",
+			desc: "Jednostavan sistem ocjenjivanja s detaljnom analitikom",
 		},
 		{
 			image: "/image3.png",
-			title: "Mobile Experience",
-			desc: "Access the full system from any mobile device",
+			title: "Mobilno iskustvo",
+			desc: "Pristupite cijelom sistemu s bilo kojeg mobilnog uređaja",
 		},
 		{
 			image: "/image4.png",
-			title: "Parent Portal",
-			desc: "Keep parents informed with our dedicated portal",
+			title: "Portal za roditelje",
+			desc: "Držite roditelje informisanim putem našeg portala",
 		},
 	];
 
@@ -147,23 +147,23 @@ const Homepage = () => {
 	const testimonials = [
 		{
 			quote:
-				"mojDnevnik transformed how we manage our school. Everything from attendance to grades is now streamlined in one place, saving us countless hours every week.",
+				"mojDnevnik je transformisao način na koji upravljamo našom školom. Sve od prisustva do ocjena je sada pojednostavljeno na jednom mjestu, što nam štedi bezbroj sati svake sedmice.",
 			name: "Ana Petrović",
-			role: "School Principal",
+			role: "Direktor škole",
 			image: "/image3.png",
 		},
 		{
 			quote:
-				"As a parent, I love being able to check my children's progress directly from my phone. The interface is intuitive and keeps me informed about their academic journey.",
+				"Kao roditelj, volim što mogu provjeriti napredak svoje djece direktno sa svog telefona. Interfejs je intuitivan i održava me informisanim o njihovom akademskom putovanju.",
 			name: "Marko Novak",
-			role: "Parent",
+			role: "Roditelj",
 			image: "/image4.png",
 		},
 		{
 			quote:
-				"The reporting features save me hours each week. I can focus more on teaching and less on paperwork. It's become indispensable to our school's operations.",
+				"Funkcije izvještavanja mi štede sate svake sedmice. Mogu se više fokusirati na podučavanje, a manje na papirologiju. Postalo je neophodno za rad naše škole.",
 			name: "Ivana Kovač",
-			role: "Class Teacher",
+			role: "Razrednik",
 			image: "/image5.png",
 		},
 	];
@@ -174,7 +174,7 @@ const Homepage = () => {
 			<HeroSection />
 
 			{/* Stats Section */}
-			<StatsSection />
+			{/* <StatsSection /> */}
 
 			{/* Features Section */}
 			<FeaturesSection />
