@@ -79,11 +79,11 @@ const Contact = () => {
 
 	// FAQs data
 	const faqs = [
-		{
-			question: "How much does mojDnevnik cost?",
-			answer:
-				"We offer flexible pricing plans based on the size of your school and the features you need. Our basic plan starts at $99/month for small schools, with discounts available for annual subscriptions. Contact us for a customized quote tailored to your specific requirements.",
-		},
+		// {
+		// 	question: "How much does mojDnevnik cost?",
+		// 	answer:
+		// 		"We offer flexible pricing plans based on the size of your school and the features you need. Our basic plan starts at $99/month for small schools, with discounts available for annual subscriptions. Contact us for a customized quote tailored to your specific requirements.",
+		// },
 		{
 			question: "Do you offer a free trial?",
 			answer:
@@ -256,7 +256,7 @@ const Contact = () => {
 										</div>
 										<div className="md-contact__info-content">
 											<h3>Email Us</h3>
-											<p>info@mojdnevnik.com</p>
+											<p>info@mojdnevnik.ba</p>
 										</div>
 									</li>
 									<li>
@@ -265,10 +265,10 @@ const Contact = () => {
 										</div>
 										<div className="md-contact__info-content">
 											<h3>Call Us</h3>
-											<p>+123 456 7890</p>
+											<p>+387 62 909 200</p>
 										</div>
 									</li>
-									<li>
+									{/* <li>
 										<div className="md-contact__info-icon">
 											<FaMapMarkerAlt />
 										</div>
@@ -282,7 +282,7 @@ const Contact = () => {
 												71000 Sarajevo, Bosnia
 											</p>
 										</div>
-									</li>
+									</li> */}
 									<li>
 										<div className="md-contact__info-icon">
 											<FaClock />
@@ -337,12 +337,12 @@ const Contact = () => {
 								</div>
 							</div>
 
-							<div className="md-contact__map">
+							{/* <div className="md-contact__map">
 								<img src="/image2.png" alt="Office Location Map" />
 								<div className="md-contact__map-badge">
 									<FaMapMarkerAlt /> Our Office
 								</div>
-							</div>
+							</div> */}
 						</motion.div>
 					</div>
 				</div>
@@ -441,9 +441,9 @@ const Contact = () => {
 						<h2>Ready to transform your school management?</h2>
 						<p>Try mojDnevnik free for 30 days. No credit card required.</p>
 						<div className="md-contact__cta-buttons">
-							<a href="#" className="md-btn md-btn-primary">
+							{/* <a href="#" className="md-btn md-btn-primary">
 								Start Free Trial
-							</a>
+							</a> */}
 							<a href="#" className="md-btn md-btn-secondary">
 								Request Demo
 							</a>

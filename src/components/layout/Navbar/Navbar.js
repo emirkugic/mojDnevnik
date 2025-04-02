@@ -42,11 +42,11 @@ const Navbar = () => {
 								Pricing
 							</Link>
 						</li>
-						<li>
+						{/* <li>
 							<Link to="/gallery" onClick={() => setIsMenuOpen(false)}>
 								Gallery
 							</Link>
-						</li>
+						</li> */}
 						{/* <li>
 							<Link to="/blog" onClick={() => setIsMenuOpen(false)}>
 								Blog

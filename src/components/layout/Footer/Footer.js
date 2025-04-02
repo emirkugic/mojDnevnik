@@ -123,7 +123,7 @@ const Footer = () => {
 					<div className="md-footer__contact">
 						<h4>Contact Us</h4>
 						<p>info@mojdnevnik.com</p>
-						<p>+123 456 7890</p>
+						<p>+387 62 909 200</p>
 						<div className="md-footer__newsletter">
 							<h4>Stay Updated</h4>
 							<div className="md-footer__form">

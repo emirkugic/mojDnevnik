@@ -64,7 +64,7 @@ const Pricing = () => {
 			icon: <FaGraduationCap />,
 			iconColor: "#4CC9F0",
 			description: "Perfect for small schools just getting started",
-			price: isAnnual ? 3.99 : 4.99,
+			price: isAnnual ? 2.99 : 3.99,
 			period: isAnnual ? "/student/month, billed annually" : "/student/month",
 			savings: isAnnual ? "Save 20% with annual billing" : null,
 			minStudents: "25 student minimum",
@@ -85,7 +85,7 @@ const Pricing = () => {
 			icon: <FaSchool />,
 			iconColor: "#4361EE",
 			description: "Most popular choice for medium-sized schools",
-			price: isAnnual ? 2.99 : 3.99,
+			price: isAnnual ? 1.99 : 2.99,
 			period: isAnnual ? "/student/month, billed annually" : "/student/month",
 			savings: isAnnual ? "Save 25% with annual billing" : null,
 			minStudents: "100 student minimum",
@@ -108,7 +108,7 @@ const Pricing = () => {
 			icon: <FaRegBuilding />,
 			iconColor: "#7209B7",
 			description: "For large educational institutions with complex needs",
-			price: isAnnual ? 1.99 : 2.49,
+			price: isAnnual ? 1.49 : 2.01,
 			period: isAnnual ? "/student/month, billed annually" : "/student/month",
 			savings: isAnnual ? "Volume discounts available" : null,
 			minStudents: "500 student minimum",
@@ -117,7 +117,6 @@ const Pricing = () => {
 				"All Professional features",
 				"Custom integrations",
 				"White-labeling options",
-				"24/7 priority support",
 				"Dedicated account manager",
 				"File storage (100GB)",
 				"Advanced security features",
@@ -374,7 +373,7 @@ const Pricing = () => {
 									<p>{plan.description}</p>
 								</div>
 								<div className="md-pricing__plan-price">
-									<span className="md-pricing__currency">$</span>
+									<span className="md-pricing__currency">€</span>
 									<span className="md-pricing__amount">{plan.price}</span>
 									<span className="md-pricing__period">{plan.period}</span>
 								</div>
